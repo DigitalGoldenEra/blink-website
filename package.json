@@ -1,5 +1,5 @@
 {
-  "name": "blinks-landing-page",
+  "name": "fortichain-landing-page",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
-    "framer-motion": "^12.34.0",
+    "gsap": "^3.14.2",
+    "lenis": "^1.3.17",
     "lucide-react": "^0.564.0",
     "next": "16.1.6",
     "react": "19.2.3",
