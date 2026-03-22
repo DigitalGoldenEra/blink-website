@@ -3,30 +3,30 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MessageCircle, PenTool, Code2, Rocket } from "lucide-react";
+import { DollarSign, Bluetooth, ShieldCheck, Landmark } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
-    icon: MessageCircle,
-    title: "Discover",
-    desc: "We learn your vision, goals, and constraints through deep discovery sessions.",
+    icon: DollarSign,
+    title: "Amount & request",
+    desc: "The merchant enters the amount in USD (or your supported fiat). The POS or Blink merchant app emits a Bluetooth payment request or QR with amount, asset, and memo.",
   },
   {
-    icon: PenTool,
-    title: "Design",
-    desc: "Wireframes, prototypes, and UI designs that align with your brand and users.",
+    icon: Bluetooth,
+    title: "Connect & confirm",
+    desc: "The payer pairs over Bluetooth (in-store) or scans the QR. The transaction is reviewed and signed locally on the phone — no shared custody.",
   },
   {
-    icon: Code2,
-    title: "Develop",
-    desc: "Agile development with transparent sprints, demos, and continuous feedback.",
+    icon: ShieldCheck,
+    title: "Settle onchain",
+    desc: "Blink submits the signed transaction to blockchain. Path payments handle FX across assets when needed; confirmation targets under five seconds.",
   },
   {
-    icon: Rocket,
-    title: "Launch",
-    desc: "Deployment, optimization, and ongoing support to ensure long-term success.",
+    icon: Landmark,
+    title: "Merchant fiat balance",
+    desc: "Merchants receive USD instantly (T+0 balance updates). Anchor-based bank payouts can follow on T+1 or T+2 — without holding crypto on the books.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function ProcessSection() {
 
   return (
     <section
-      id="process"
+      id="how-it-works"
       ref={sectionRef}
       className="py-32 px-6 border-t border-zinc-200 bg-white"
     >
@@ -85,10 +85,11 @@ export default function ProcessSection() {
           ref={titleRef}
           className="font-heading text-4xl md:text-5xl font-bold text-black text-center mb-6"
         >
-          How We Work
+          How a payment flows
         </h2>
         <p className="text-zinc-600 text-center max-w-xl mx-auto mb-20">
-          A proven process that delivers results
+          Bluetooth for fast in-person retail; QR for everywhere else. Same
+          Stellar settlement underneath.
         </p>
 
         <div

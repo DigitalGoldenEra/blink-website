@@ -8,9 +8,21 @@ import { ArrowUpRight } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { title: "Fintech Platform", category: "Web App" },
-  { title: "Health & Wellness", category: "Mobile App" },
-  { title: "E-Commerce Suite", category: "Full Stack" },
+  {
+    title: "Payers & travelers",
+    category: "End users",
+    desc: "Crypto-native spenders, underbanked users, and cross-border travelers who want tap-or-scan checkout without cards.",
+  },
+  {
+    title: "Shops & retail",
+    category: "Merchants",
+    desc: "SMEs and retail businesses that want to accept crypto at the counter while settling in USD or Naira.",
+  },
+  {
+    title: "Online & cross-border",
+    category: "Commerce",
+    desc: "E-commerce and cross-border sellers using QR, APIs, and POS integrations with dashboard, balances, and payout history.",
+  },
 ];
 
 export default function WorkSection() {
@@ -59,7 +71,7 @@ export default function WorkSection() {
 
   return (
     <section
-      id="work"
+      id="use-cases"
       ref={sectionRef}
       className="py-32 px-6 border-t border-zinc-200 bg-zinc-50"
     >
@@ -68,10 +80,11 @@ export default function WorkSection() {
           ref={titleRef}
           className="font-heading text-4xl md:text-5xl font-bold text-black text-center mb-6"
         >
-          Selected Work
+          Who Blink is for
         </h2>
-        <p className="text-zinc-600 text-center mb-20">
-          A glimpse of what we&apos;ve built
+        <p className="text-zinc-600 text-center mb-20 max-w-2xl mx-auto">
+          Lower fees and open infrastructure for users who want to spend crypto;
+          instant fiat settlement and simple onboarding for merchants.
         </p>
 
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -84,11 +97,16 @@ export default function WorkSection() {
                 <span className="text-zinc-500 text-sm font-medium">
                   {project.category}
                 </span>
-                <ArrowUpRight className="w-5 h-5 text-zinc-400 group-hover:text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                <ArrowUpRight className="w-5 h-5 text-zinc-400 group-hover:text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 shrink-0" />
               </div>
-              <h3 className="font-heading text-2xl font-semibold text-black">
-                {project.title}
-              </h3>
+              <div>
+                <h3 className="font-heading text-2xl font-semibold text-black mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-zinc-600 text-sm leading-relaxed">
+                  {project.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>

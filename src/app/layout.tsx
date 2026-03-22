@@ -21,20 +21,23 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Fortichain – Software Development Agency | Build What Matters',
+  title: 'Blink – Crypto payments for the real world | Stellar',
   description:
-    'Fortichain is a software development agency that builds modern, scalable digital products. Web apps, mobile apps, and custom software solutions.',
+    'Blink is a native mobile app for real-world crypto payments: Bluetooth Tap-to-Pay and Scan-to-Pay (QR) on Stellar. Pay with crypto; merchants settle in USD or Naira.',
   keywords: [
-    'software development agency',
-    'web development',
-    'mobile app development',
-    'custom software',
-    'digital products',
-    'Fortichain',
+    'Blink',
+    'crypto payments',
+    'Stellar',
+    'Bluetooth payments',
+    'QR payments',
+    'stablecoins',
+    'Web3',
+    'fintech',
   ],
   openGraph: {
-    title: 'Fortichain – Software Development Agency',
-    description: 'We build modern, scalable digital products that drive growth.',
+    title: 'Blink – Real-world crypto payments on Stellar',
+    description:
+      'Spend crypto in stores without cards or Big Tech wallets. Tap with Bluetooth, scan with QR, settle in seconds.',
     type: 'website',
   },
 };

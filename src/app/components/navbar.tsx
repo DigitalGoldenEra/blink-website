@@ -59,7 +59,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         <Link href="/" ref={logoRef}>
           <span className="font-heading text-2xl font-bold text-black tracking-tight">
-            Fortichain
+            Blink
           </span>
         </Link>
 
@@ -68,10 +68,10 @@ export default function Navbar() {
           className="hidden md:flex items-center gap-8 text-zinc-600 font-medium"
         >
           <Link
-            href="#services"
+            href="#features"
             className="hover:text-black transition-colors duration-300"
           >
-            Services
+            Features
           </Link>
           <Link
             href="#about"
@@ -80,16 +80,16 @@ export default function Navbar() {
             About
           </Link>
           <Link
-            href="#process"
+            href="#how-it-works"
             className="hover:text-black transition-colors duration-300"
           >
-            Process
+            How it works
           </Link>
           <Link
-            href="#work"
+            href="#use-cases"
             className="hover:text-black transition-colors duration-300"
           >
-            Work
+            Who it&apos;s for
           </Link>
         </div>
 
@@ -99,7 +99,7 @@ export default function Navbar() {
         >
           <a href="#contact">
             <button className="px-5 py-2 rounded-md bg-black text-white border border-black hover:bg-zinc-800 transition-all duration-300 font-medium">
-              Start a Project
+              Get updates
             </button>
           </a>
         </div>
@@ -114,17 +114,17 @@ export default function Navbar() {
 
       {isOpen && (
         <div className="md:hidden px-6 pb-6 flex flex-col gap-4 text-zinc-600 font-medium border-t border-zinc-200 pt-4">
-          <Link href="#services" onClick={() => setIsOpen(false)}>
-            Services
+          <Link href="#features" onClick={() => setIsOpen(false)}>
+            Features
           </Link>
           <Link href="#about" onClick={() => setIsOpen(false)}>
             About
           </Link>
-          <Link href="#process" onClick={() => setIsOpen(false)}>
-            Process
+          <Link href="#how-it-works" onClick={() => setIsOpen(false)}>
+            How it works
           </Link>
-          <Link href="#work" onClick={() => setIsOpen(false)}>
-            Work
+          <Link href="#use-cases" onClick={() => setIsOpen(false)}>
+            Who it&apos;s for
           </Link>
           <Link href="#contact" onClick={() => setIsOpen(false)}>
             Contact

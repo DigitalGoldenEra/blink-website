@@ -4,11 +4,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  Code2,
-  Smartphone,
-  Cloud,
-  Database,
-  Palette,
+  Wallet,
+  Bluetooth,
+  QrCode,
+  ArrowLeftRight,
+  Fingerprint,
   Zap,
 } from "lucide-react";
 
@@ -16,34 +16,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    icon: Code2,
-    title: "Web Development",
-    desc: "Modern, performant web applications built with React, Next.js, and cutting-edge tech.",
+    icon: Wallet,
+    title: "Non-custodial wallet",
+    desc: "Hold stablecoins in a wallet you control — no bank card required.",
   },
   {
-    icon: Smartphone,
-    title: "Mobile Apps",
-    desc: "Native and cross-platform mobile solutions for iOS and Android.",
+    icon: Bluetooth,
+    title: "Bluetooth Tap-to-Pay",
+    desc: "Pay in person by connecting over Bluetooth: fast retail checkout without copying wallet addresses.",
   },
   {
-    icon: Cloud,
-    title: "Cloud Solutions",
-    desc: "Scalable infrastructure on AWS, GCP, or Azure tailored to your needs.",
+    icon: QrCode,
+    title: "Scan-to-Pay (QR)",
+    desc: "Dynamic or static QR codes, plus SEP-0007-compatible deep links for universal pay and online checkout.",
   },
   {
-    icon: Database,
-    title: "Backend Systems",
-    desc: "Robust APIs, microservices, and data architectures that scale.",
+    icon: ArrowLeftRight,
+    title: "Path payments & FX",
+    desc: "Automatic conversion across Stellar assets so you spend in crypto while rails optimize the path.",
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    desc: "Beautiful, intuitive interfaces that users love and convert.",
+    icon: Fingerprint,
+    title: "Biometric security",
+    desc: "Sign transactions locally with biometrics — your keys stay on your device.",
   },
   {
     icon: Zap,
-    title: "DevOps & CI/CD",
-    desc: "Automated pipelines, monitoring, and deployment strategies.",
+    title: "Sub-5s confirmation",
+    desc: "Transactions confirm in seconds on Stellar — quick enough for real-world queues and counters.",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function ServicesSection() {
 
   return (
     <section
-      id="services"
+      id="features"
       ref={sectionRef}
       className="py-32 px-6 border-t border-zinc-200 bg-white"
     >
@@ -102,10 +102,11 @@ export default function ServicesSection() {
           ref={titleRef}
           className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-black text-center mb-6"
         >
-          What We Build
+          Everything you need to spend and settle
         </h2>
         <p className="text-zinc-600 text-center text-lg max-w-2xl mx-auto mb-20">
-          Full-stack expertise to bring your vision to life
+          Built on Stellar: open infrastructure, programmable money, and
+          settlement that keeps merchants out of volatility.
         </p>
 
         <div

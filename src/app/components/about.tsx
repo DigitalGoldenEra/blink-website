@@ -50,9 +50,9 @@ export default function AboutSection() {
   }, []);
 
   const stats = [
-    { value: "50+", label: "Projects Delivered" },
-    { value: "12+", label: "Industries Served" },
-    { value: "98%", label: "Client Satisfaction" },
+    { value: "<5s", label: "Target confirmation time" },
+    { value: "T+0", label: "Merchant balance updates" },
+    { value: "USD/₦", label: "Fiat settlement for merchants" },
   ];
 
   return (
@@ -65,20 +65,24 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div ref={textRef}>
             <span className="text-zinc-500 font-medium text-sm uppercase tracking-widest">
-              About Fortichain
+              Why Blink
             </span>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-black mt-4 mb-6">
-              We turn complex problems into elegant solutions
+              Crypto is global — spending it shouldn&apos;t require Big Tech
+              wallets or banks
             </h2>
             <p className="text-zinc-600 text-lg leading-relaxed mb-6">
-              Fortichain is a software development agency that believes in
-              building products that matter. We combine technical excellence
-              with design thinking to create digital experiences that drive
-              growth and delight users.
+              Today&apos;s digital payments run on closed rails: cards,
+              intermediaries, and platforms that exclude billions without reliable
+              banking access. Even when you hold crypto, everyday commerce often
+              means cashing out first — and verifying long wallet addresses is a
+              pain at the counter.
             </p>
             <p className="text-zinc-500 leading-relaxed">
-              From startups to enterprises, we partner with ambitious teams to
-              architect, build, and scale software that stands the test of time.
+              Blink lets people pay with crypto in the real world via Bluetooth
+              and QR, while merchants price in USD or Naira and receive instant
+              fiat settlement — powered by Stellar as an open, global payment
+              rail.
             </p>
           </div>
 

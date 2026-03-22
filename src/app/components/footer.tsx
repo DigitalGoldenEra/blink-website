@@ -64,7 +64,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
           <Link href="/">
             <span className="font-heading text-2xl font-bold text-black tracking-tight">
-              Fortichain
+              Blink
             </span>
           </Link>
 
@@ -72,17 +72,17 @@ export default function Footer() {
             ref={linksRef}
             className="flex flex-wrap justify-center gap-8 text-zinc-600 font-medium"
           >
-            <Link href="#services" className="hover:text-black transition-colors">
-              Services
+            <Link href="#features" className="hover:text-black transition-colors">
+              Features
             </Link>
             <Link href="#about" className="hover:text-black transition-colors">
               About
             </Link>
-            <Link href="#process" className="hover:text-black transition-colors">
-              Process
+            <Link href="#how-it-works" className="hover:text-black transition-colors">
+              How it works
             </Link>
-            <Link href="#work" className="hover:text-black transition-colors">
-              Work
+            <Link href="#use-cases" className="hover:text-black transition-colors">
+              Who it&apos;s for
             </Link>
             <Link href="#contact" className="hover:text-black transition-colors">
               Contact
@@ -106,7 +106,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-zinc-200 text-center text-zinc-500 text-sm">
-          © {currentYear} Fortichain. All rights reserved.
+          © {currentYear} Blink. All rights reserved.
         </div>
       </div>
     </footer>

@@ -60,24 +60,24 @@ export default function ContactSection() {
       <div className="max-w-4xl mx-auto text-center">
         <div ref={contentRef}>
           <span className="text-zinc-500 font-medium text-sm uppercase tracking-widest">
-            Get in Touch
+            Stay in the loop
           </span>
           <h2 className="font-heading text-4xl md:text-6xl font-bold text-black mt-4 mb-6">
-            Ready to build something great?
+            Be first when Blink launches
           </h2>
           <p className="text-zinc-600 text-lg max-w-2xl mx-auto mb-12">
-            Tell us about your project. We&apos;ll get back within 24 hours
-            with ideas and next steps.
+            Questions about Bluetooth Tap-to-Pay, merchant settlement, or the
+            Stellar stack? Reach out — we&apos;ll respond as soon as we can.
           </p>
         </div>
 
         <a
           ref={ctaRef}
-          href="mailto:hello@fortichain.com"
+          href="mailto:hello@blink.app"
           className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-black text-white font-semibold hover:bg-zinc-800 transition-all duration-300 group"
         >
           <Mail className="w-5 h-5" />
-          hello@fortichain.com
+          hello@blink.app
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
