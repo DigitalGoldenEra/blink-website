@@ -52,14 +52,14 @@ export default function AboutSection() {
   const stats = [
     { value: "<5s", label: "Target confirmation time" },
     { value: "T+0", label: "Merchant balance updates" },
-    { value: "USD/₦", label: "Fiat settlement for merchants" },
+   
   ];
 
   return (
     <section
       id="about"
       ref={sectionRef}
-      className="py-32 px-6 border-t border-zinc-200 bg-zinc-50"
+      className="py-20 md:py-32 px-6 border-t border-zinc-200 bg-zinc-50"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -80,9 +80,8 @@ export default function AboutSection() {
             </p>
             <p className="text-zinc-500 leading-relaxed">
               Blink lets people pay with crypto in the real world via Bluetooth
-              and QR, while merchants price in USD or Naira and receive instant
-              fiat settlement — powered by Stellar as an open, global payment
-              rail.
+              and QR, while merchants receive instant
+              fiat settlement — powered by blockchain.
             </p>
           </div>
 

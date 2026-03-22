@@ -18,7 +18,7 @@ const services = [
   {
     icon: Wallet,
     title: "Non-custodial wallet",
-    desc: "Hold stablecoins in a wallet you control — no bank card required.",
+    desc: "Hold stablecoins in a wallet you control — no bank card, no Apple Pay or Google Pay required.",
   },
   {
     icon: Bluetooth,
@@ -28,22 +28,22 @@ const services = [
   {
     icon: QrCode,
     title: "Scan-to-Pay (QR)",
-    desc: "Dynamic or static QR codes, plus SEP-0007-compatible deep links for universal pay and online checkout.",
+    desc: "Dynamic or static QR codes, plus SEP-0007-compatible deep links for payment.",
   },
   {
     icon: ArrowLeftRight,
     title: "Path payments & FX",
-    desc: "Automatic conversion across Stellar assets so you spend in crypto while rails optimize the path.",
+    desc: "Automatic conversion across crypto assets so you spend in crypto while rails optimize the path.",
   },
   {
     icon: Fingerprint,
     title: "Biometric security",
-    desc: "Sign transactions locally with biometrics — your keys stay on your device.",
+    desc: "Protect account locally  with biometrics — your keys stay on your device.",
   },
   {
     icon: Zap,
     title: "Sub-5s confirmation",
-    desc: "Transactions confirm in seconds on Stellar — quick enough for real-world queues and counters.",
+    desc: "Transactions confirm in seconds onchain — quick enough for real-world queues and counters.",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function ServicesSection() {
     <section
       id="features"
       ref={sectionRef}
-      className="py-32 px-6 border-t border-zinc-200 bg-white"
+      className="py-20 md:py-32 px-6 border-t border-zinc-200 bg-white"
     >
       <div className="max-w-6xl mx-auto">
         <h2
@@ -105,7 +105,7 @@ export default function ServicesSection() {
           Everything you need to spend and settle
         </h2>
         <p className="text-zinc-600 text-center text-lg max-w-2xl mx-auto mb-20">
-          Built on Stellar: open infrastructure, programmable money, and
+          Built on Blockchain : open infrastructure, programmable money, and
           settlement that keeps merchants out of volatility.
         </p>
 

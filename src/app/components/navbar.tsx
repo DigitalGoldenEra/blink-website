@@ -97,11 +97,11 @@ export default function Navbar() {
           ref={rightLinksRef}
           className="hidden md:flex items-center gap-8 text-zinc-600 font-medium"
         >
-          <a href="#contact">
-            <button className="px-5 py-2 rounded-md bg-black text-white border border-black hover:bg-zinc-800 transition-all duration-300 font-medium">
-              Get updates
+          <Link href="/doc">
+            <button className="px-5 py-2 cursor-pointer rounded-md bg-black text-white border border-black hover:bg-zinc-800 transition-all duration-300 font-medium cursor-pointer">
+              Open Docs
             </button>
-          </a>
+          </Link>
         </div>
 
         <button
@@ -126,8 +126,8 @@ export default function Navbar() {
           <Link href="#use-cases" onClick={() => setIsOpen(false)}>
             Who it&apos;s for
           </Link>
-          <Link href="#contact" onClick={() => setIsOpen(false)}>
-            Contact
+          <Link href="/doc" onClick={() => setIsOpen(false)}>
+            Docs
           </Link>
         </div>
       )}

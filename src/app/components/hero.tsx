@@ -102,8 +102,8 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative flex items-center justify-center overflow-hidden">
-      <div className="max-w-5xl mx-auto text-center py-30 lg:pt-50">
+      className="relative flex items-center justify-center overflow-hidden min-h-[85vh] md:min-h-screen px-4">
+      <div className="max-w-5xl mx-auto text-center py-24 md:py-32 lg:pt-40">
         <h1
           ref={headlineRef}
           className="font-heading flex flex-col items-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black leading-[1.1] tracking-tight"
@@ -117,7 +117,7 @@ export default function HeroSection() {
           className="mt-2 text-xl md:text-2xl text-black max-w-2xl mx-auto font-light"
         >
           Blink is a native mobile app for everyday crypto payments.
-          Bluetooth Tap-to-Pay and Scan-to-Pay (QR) — with instant USD or Naira
+          Bluetooth Tap-to-Pay and Scan-to-Pay (QR) — with instant fiat
           settlement for merchants.
         </p>
 

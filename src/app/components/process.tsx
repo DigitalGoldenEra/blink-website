@@ -11,7 +11,7 @@ const steps = [
   {
     icon: DollarSign,
     title: "Amount & request",
-    desc: "The merchant enters the amount in USD (or your supported fiat). The POS or Blink merchant app emits a Bluetooth payment request or QR with amount, asset, and memo.",
+    desc: "The merchant enters the amount in crypto (or your supported fiat). The Blink app emits a Bluetooth payment request or QR with amount and payment details.",
   },
   {
     icon: Bluetooth,
@@ -21,12 +21,12 @@ const steps = [
   {
     icon: ShieldCheck,
     title: "Settle onchain",
-    desc: "Blink submits the signed transaction to blockchain. Path payments handle FX across assets when needed; confirmation targets under five seconds.",
+    desc: "Blink submits the signed transaction to blockchain. Path payments handle conversion across assets when needed; confirmation targets under five seconds.",
   },
   {
     icon: Landmark,
     title: "Merchant fiat balance",
-    desc: "Merchants receive USD instantly (T+0 balance updates). Anchor-based bank payouts can follow on T+1 or T+2 — without holding crypto on the books.",
+    desc: "Merchants receive Fiat instantly (T+0 balance updates).",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function ProcessSection() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="py-32 px-6 border-t border-zinc-200 bg-white"
+      className="py-20 md:py-32 px-6 border-t border-zinc-200 bg-white"
     >
       <div className="max-w-6xl mx-auto">
         <h2
@@ -88,8 +88,7 @@ export default function ProcessSection() {
           How a payment flows
         </h2>
         <p className="text-zinc-600 text-center max-w-xl mx-auto mb-20">
-          Bluetooth for fast in-person retail; QR for everywhere else. Same
-          Stellar settlement underneath.
+          Bluetooth for fast in-person retail; QR for everywhere else.
         </p>
 
         <div

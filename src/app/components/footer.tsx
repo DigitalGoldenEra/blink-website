@@ -4,7 +4,13 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Instagram, Send } from "lucide-react";
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,15 +56,15 @@ export default function Footer() {
   }, []);
 
   const socialLinks = [
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com", label: "GitHub" },
+    { icon: XIcon, href: "https://x.com/useblinkapp", label: "X (Twitter)" },
+    { icon: Instagram, href: "https://www.instagram.com/useblinkapp/", label: "Instagram" },
+    { icon: Send, href: "https://t.me/useblinkapp", label: "Telegram" },
   ];
 
   return (
     <footer
       ref={footerRef}
-      className="w-full border-t border-zinc-200 bg-zinc-50 py-16 px-6"
+      className="w-full border-t border-zinc-200 bg-zinc-50 py-12 md:py-16 px-6"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8">

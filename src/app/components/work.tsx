@@ -11,17 +11,18 @@ const projects = [
   {
     title: "Payers & travelers",
     category: "End users",
-    desc: "Crypto-native spenders, underbanked users, and cross-border travelers who want tap-or-scan checkout without cards.",
+    desc: "Crypto-native spenders, underbanked users, and cross-border travelers who want tap-or-scan checkout without cards, Apple Pay or Google Pay.",
   },
   {
     title: "Shops & retail",
     category: "Merchants",
-    desc: "SMEs and retail businesses that want to accept crypto at the counter while settling in USD or Naira.",
+    desc: "SMEs and retail businesses that want to accept crypto at the counter while settling in Fiat .",
   },
   {
     title: "Online & cross-border",
     category: "Commerce",
-    desc: "E-commerce and cross-border sellers using QR, APIs, and POS integrations with dashboard, balances, and payout history.",
+    desc: "E-commerce and cross-border sellers using QR integrations.",
+    isComingSoon: true,
   },
 ];
 
@@ -73,7 +74,7 @@ export default function WorkSection() {
     <section
       id="use-cases"
       ref={sectionRef}
-      className="py-32 px-6 border-t border-zinc-200 bg-zinc-50"
+      className="py-20 md:py-32 px-6 border-t border-zinc-200 bg-zinc-50"
     >
       <div className="max-w-6xl mx-auto">
         <h2
@@ -94,9 +95,16 @@ export default function WorkSection() {
               className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-8 min-h-[280px] flex flex-col justify-between hover:border-zinc-400 transition-all duration-500 cursor-pointer"
             >
               <div className="flex justify-between items-start">
-                <span className="text-zinc-500 text-sm font-medium">
-                  {project.category}
-                </span>
+                <div className="flex items-center gap-3">
+                  <span className="text-zinc-500 text-sm font-medium">
+                    {project.category}
+                  </span>
+                  {project.isComingSoon && (
+                    <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full bg-zinc-200 text-zinc-600">
+                      Coming Soon
+                    </span>
+                  )}
+                </div>
                 <ArrowUpRight className="w-5 h-5 text-zinc-400 group-hover:text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 shrink-0" />
               </div>
               <div>
