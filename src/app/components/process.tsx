@@ -3,30 +3,47 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { DollarSign, Bluetooth, ShieldCheck, Landmark } from "lucide-react";
+import {
+  DollarSign,
+  Radio,
+  Smartphone,
+  Fingerprint,
+  ShieldCheck,
+  BellRing,
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
     icon: DollarSign,
-    title: "Amount & request",
-    desc: "The merchant enters the amount in crypto (or your supported fiat). The Blink app emits a Bluetooth payment request or QR with amount and payment details.",
+    title: "Merchant requests payment",
+    desc: "The receiver enters amount and currency in Blink and taps “Request payment”.",
   },
   {
-    icon: Bluetooth,
-    title: "Connect & confirm",
-    desc: "The payer pairs over Bluetooth (in-store) or scans the QR. The transaction is reviewed and signed locally on the phone — no shared custody.",
+    icon: Radio,
+    title: "Handoff code & BLE",
+    desc: "Blink returns a short, time-sensitive code; the merchant device broadcasts it over Bluetooth Low Energy.",
+  },
+  {
+    icon: Smartphone,
+    title: "Payer finds & loads details",
+    desc: "The payer taps “Find receiver”, scans BLE ads for the code, and pulls receiver info, amount, rails, and pool addresses from Blink.",
+  },
+  {
+    icon: Fingerprint,
+    title: "Swipe + biometric confirm",
+    desc: "The payer reviews everything on-device and authorizes with swipe and biometrics — keys stay non-custodial.",
   },
   {
     icon: ShieldCheck,
-    title: "Settle onchain",
-    desc: "Blink submits the signed transaction to blockchain. Path payments handle conversion across assets when needed; confirmation targets under five seconds.",
+    title: "Rail & on-chain processing",
+    desc: "Blink routes the transaction through the selected rail (local currency path or on-chain USDC) with liquidity and path payments as needed.",
   },
   {
-    icon: Landmark,
-    title: "Merchant fiat balance",
-    desc: "Merchants receive Fiat instantly (T+0 balance updates).",
+    icon: BellRing,
+    title: "Realtime completion",
+    desc: "WebSockets push updates to both parties so payer and merchant see success the moment the system completes.",
   },
 ];
 
@@ -85,15 +102,16 @@ export default function ProcessSection() {
           ref={titleRef}
           className="font-heading text-4xl md:text-5xl font-bold text-black text-center mb-6"
         >
-          How a payment flows
+          How a Bluetooth payment works
         </h2>
-        <p className="text-zinc-600 text-center max-w-xl mx-auto mb-20">
-          Bluetooth for fast in-person retail; QR for everywhere else.
+        <p className="text-zinc-600 text-center max-w-2xl mx-auto mb-20">
+          End-to-end flow from “request payment” to instant updates — built for
+          in-person retail without typing wallet addresses.
         </p>
 
         <div
           ref={stepsRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {steps.map((step, i) => (
             <div key={step.title} className="relative">
@@ -111,9 +129,6 @@ export default function ProcessSection() {
                   {step.desc}
                 </p>
               </div>
-              {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-7 left-[calc(50%+3.5rem)] w-[calc(100%-3.5rem)] h-px bg-zinc-300" />
-              )}
             </div>
           ))}
         </div>

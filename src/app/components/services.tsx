@@ -6,44 +6,44 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   Wallet,
   Bluetooth,
-  QrCode,
+  Radio,
   ArrowLeftRight,
-  Fingerprint,
-  Zap,
+  Landmark,
+  Activity,
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    icon: Wallet,
-    title: "Non-custodial wallet",
-    desc: "Hold stablecoins in a wallet you control — no bank card, no Apple Pay or Google Pay required.",
-  },
-  {
     icon: Bluetooth,
-    title: "Bluetooth Tap-to-Pay",
-    desc: "Pay in person by connecting over Bluetooth: fast retail checkout without copying wallet addresses.",
+    title: "Bluetooth Low Energy handoff",
+    desc: "The merchant creates a payment request; our backend issues a short, time-bound code; the receiver broadcasts it over BLE so the payer can discover the right checkout with no manual address entry.",
   },
   {
-    icon: QrCode,
-    title: "Scan-to-Pay (QR)",
-    desc: "Dynamic or static QR codes, plus SEP-0007-compatible deep links for payment.",
+    icon: Radio,
+    title: "Nearby discovery",
+    desc: "Payers tap “Find receiver” and scan BLE advertisements to pick up the handoff code, then fetch full payment details — receiver, amount, rails, pool addresses — from Blink.",
+  },
+  {
+    icon: Wallet,
+    title: "Multi-chain unified wallet",
+    desc: "One identity with a consistent user ID and wallet surface across supported chains. Non-custodial: Blink never holds your private keys or funds.",
   },
   {
     icon: ArrowLeftRight,
-    title: "Path payments & FX",
-    desc: "Automatic conversion across crypto assets so you spend in crypto while rails optimize the path.",
+    title: "Stellar, Solana & Base",
+    desc: "Launch support on three networks with stablecoin focus (USDC) so spend amounts stay understandable while routing can use the best path.",
   },
   {
-    icon: Fingerprint,
-    title: "Biometric security",
-    desc: "Protect account locally  with biometrics — your keys stay on your device.",
+    icon: Landmark,
+    title: "Settlement & liquidity",
+    desc: "Merchants get automated path payments or liquidity-pool processing so balances settle in NGN or other local currency — not in volatile crypto.",
   },
   {
-    icon: Zap,
-    title: "Sub-5s confirmation",
-    desc: "Transactions confirm in seconds onchain — quick enough for real-world queues and counters.",
+    icon: Activity,
+    title: "Live updates & payouts",
+    desc: "WebSockets keep both sides in sync as the payment clears. Sellers can withdraw local currency via bank transfer or virtual accounts when they’re ready.",
   },
 ];
 
@@ -102,11 +102,12 @@ export default function ServicesSection() {
           ref={titleRef}
           className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-black text-center mb-6"
         >
-          Everything you need to spend and settle
+          Handoff, wallet, and settlement in one flow
         </h2>
         <p className="text-zinc-600 text-center text-lg max-w-2xl mx-auto mb-20">
-          Built on Blockchain : open infrastructure, programmable money, and
-          settlement that keeps merchants out of volatility.
+          Core product pillars from the Blink architecture — Bluetooth-first
+          discovery, one wallet identity across chains, and local-currency
+          settlement behind the scenes.
         </p>
 
         <div

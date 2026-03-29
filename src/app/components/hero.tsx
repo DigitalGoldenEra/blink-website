@@ -103,7 +103,7 @@ export default function HeroSection() {
     <section
       ref={containerRef}
       className="relative flex items-center justify-center overflow-hidden min-h-[85vh] md:min-h-screen px-4">
-      <div className="max-w-5xl mx-auto text-center py-24 md:py-32 lg:pt-40">
+      <div className="max-w-5xl mx-auto text-center py-24 md:py-32 lg:pt-10">
         <h1
           ref={headlineRef}
           className="font-heading flex flex-col items-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black leading-[1.1] tracking-tight"
@@ -114,18 +114,25 @@ export default function HeroSection() {
 
         <p
           ref={sublineRef}
-          className="mt-2 text-xl md:text-2xl text-black max-w-2xl mx-auto font-light"
+          className="mt-2 text-xl md:text-2xl text-black max-w-3xl mx-auto font-light"
         >
-          Blink is a native mobile app for everyday crypto payments.
-          Bluetooth Tap-to-Pay and Scan-to-Pay (QR) — with instant fiat
-          settlement for merchants.
+          Blink lets merchants accept real-world crypto payments over Bluetooth
+          and get instant settlement in their local currency — so payers spend
+          stablecoins without painful off-ramps, and businesses avoid crypto
+          volatility.
         </p>
 
         <div
           ref={ctaRef}
           className="mt-12 flex flex-col items-center gap-8"
         >
-          <div
+          <a
+            href="#waitlist"
+            className="inline-flex items-center justify-center rounded-xl bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-md shadow-black/10 transition hover:bg-zinc-800"
+          >
+            Join the waitlist
+          </a>
+          {/* <div
             ref={storeRowRef}
             className="flex flex-wrap items-center justify-center gap-3"
           >
@@ -194,7 +201,7 @@ export default function HeroSection() {
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -50,9 +50,9 @@ export default function AboutSection() {
   }, []);
 
   const stats = [
-    { value: "<5s", label: "Target confirmation time" },
-    { value: "T+0", label: "Merchant balance updates" },
-   
+    { value: "BLE", label: "Nearby, error-free handoff" },
+    { value: "USDC", label: "Stablecoin-first spending" },
+    { value: "NGN+", label: "Local settlement for merchants" },
   ];
 
   return (
@@ -68,20 +68,28 @@ export default function AboutSection() {
               Why Blink
             </span>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-black mt-4 mb-6">
-              Crypto is global — spending it shouldn&apos;t require Big Tech
-              wallets or banks
+              Payments built for crypto-native spenders and real-world merchants
             </h2>
             <p className="text-zinc-600 text-lg leading-relaxed mb-6">
-              Today&apos;s digital payments run on closed rails: cards,
-              intermediaries, and platforms that exclude billions without reliable
-              banking access. Even when you hold crypto, everyday commerce often
-              means cashing out first — and verifying long wallet addresses is a
-              pain at the counter.
+              Today, turning crypto into everyday spending still means high fees,
+              risky P2P off-ramps, and clunky wallet-address entry at checkout.
+              Many merchants want modern payment options but fear volatility and
+              don&apos;t want to run complex Web3 infrastructure.
+            </p>
+            <p className="text-zinc-600 text-lg leading-relaxed mb-6">
+              Blink is focused on{' '}
+              <span className="text-black font-medium">
+                Nigeria, Kenya, Ghana, and South Africa
+              </span>{' '}
+              first — making crypto utility feel as familiar as other digital
+              payments: spend stablecoins directly, discover the counter over
+              Bluetooth, and let sellers receive predictable balances in local
+              currency.
             </p>
             <p className="text-zinc-500 leading-relaxed">
-              Blink lets people pay with crypto in the real world via Bluetooth
-              and QR, while merchants receive instant
-              fiat settlement — powered by blockchain.
+              Goals: faster adoption in local markets, direct spending without
+              manual off-ramping, a volatility shield for merchants, and tap-to-find
+              discovery that replaces stressful address copy-paste.
             </p>
           </div>
 

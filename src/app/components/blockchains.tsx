@@ -46,7 +46,12 @@ export default function BlockchainsSection() {
             Multi-Chain Ecosystem
           </h2>
           <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Currently settling at the speed of light on <span className="text-white font-semibold">Base</span>, <span className="text-white font-semibold">Stellar</span>, and <span className="text-white font-semibold">Solana</span>. <br className="hidden md:block"/>Scaling across all major blockchains in the near future.
+            Blink launches with <span className="text-white font-semibold">Stellar</span>,{' '}
+            <span className="text-white font-semibold">Solana</span>, and{' '}
+            <span className="text-white font-semibold">Base</span> — unified under one
+            wallet identity, with <span className="text-white font-semibold">USDC</span>{' '}
+            as the primary spend asset for predictable value. More networks follow as
+            liquidity and compliance expand.
           </p>
         </div>
 

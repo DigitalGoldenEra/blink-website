@@ -5,7 +5,7 @@ import ServicesSection from "./components/services";
 import AboutSection from "./components/about";
 import ProcessSection from "./components/process";
 import WorkSection from "./components/work";
-import ContactSection from "./components/contact";
+import WaitlistSection from "./components/contact";
 import BlockchainsSection from "./components/blockchains";
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
       <AboutSection />
       <ProcessSection />
       <WorkSection />
-      <ContactSection />
+      <WaitlistSection />
       <Footer />
     </div>
   );

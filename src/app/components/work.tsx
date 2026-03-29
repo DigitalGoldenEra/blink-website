@@ -9,20 +9,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    title: "Payers & travelers",
-    category: "End users",
-    desc: "Crypto-native spenders, underbanked users, and cross-border travelers who want tap-or-scan checkout without cards, Apple Pay or Google Pay.",
+    title: "The payer",
+    category: "Crypto-native & underbanked",
+    desc: "Spend USDC and other supported stablecoins at local shops without cashing out to a bank first. Skip high friction: gas surprises, slow confirmations, and triple-checking long wallet addresses.",
   },
   {
-    title: "Shops & retail",
-    category: "Merchants",
-    desc: "SMEs and retail businesses that want to accept crypto at the counter while settling in Fiat .",
+    title: "The merchant",
+    category: "SMEs & retailers",
+    desc: "Accept modern payment flows, reach crypto-holding customers, and see predictable NGN or local-currency balances — without running nodes or absorbing token volatility.",
   },
   {
-    title: "Online & cross-border",
-    category: "Commerce",
-    desc: "E-commerce and cross-border sellers using QR integrations.",
-    isComingSoon: true,
+    title: "Emerging markets first",
+    category: "Where we start",
+    desc: "Initial GTM targets Nigeria, Kenya, Ghana, and South Africa — places where digital money is thriving but crypto checkout is still harder than it should be.",
   },
 ];
 
@@ -84,8 +83,8 @@ export default function WorkSection() {
           Who Blink is for
         </h2>
         <p className="text-zinc-600 text-center mb-20 max-w-2xl mx-auto">
-          Lower fees and open infrastructure for users who want to spend crypto;
-          instant fiat settlement and simple onboarding for merchants.
+          Two sides of the same checkout: payers who want direct stablecoin
+          spending, and merchants who want modern rails with local settlement.
         </p>
 
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -99,11 +98,6 @@ export default function WorkSection() {
                   <span className="text-zinc-500 text-sm font-medium">
                     {project.category}
                   </span>
-                  {project.isComingSoon && (
-                    <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full bg-zinc-200 text-zinc-600">
-                      Coming Soon
-                    </span>
-                  )}
                 </div>
                 <ArrowUpRight className="w-5 h-5 text-zinc-400 group-hover:text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 shrink-0" />
               </div>

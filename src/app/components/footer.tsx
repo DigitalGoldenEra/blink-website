@@ -90,8 +90,8 @@ export default function Footer() {
             <Link href="#use-cases" className="hover:text-black transition-colors">
               Who it&apos;s for
             </Link>
-            <Link href="#contact" className="hover:text-black transition-colors">
-              Contact
+            <Link href="#waitlist" className="hover:text-black transition-colors">
+              Waitlist
             </Link>
           </div>
 

@@ -91,6 +91,12 @@ export default function Navbar() {
           >
             Who it&apos;s for
           </Link>
+          <Link
+            href="#waitlist"
+            className="hover:text-black transition-colors duration-300"
+          >
+            Waitlist
+          </Link>
         </div>
 
         <div
@@ -125,6 +131,9 @@ export default function Navbar() {
           </Link>
           <Link href="#use-cases" onClick={() => setIsOpen(false)}>
             Who it&apos;s for
+          </Link>
+          <Link href="#waitlist" onClick={() => setIsOpen(false)}>
+            Waitlist
           </Link>
           <Link href="/doc" onClick={() => setIsOpen(false)}>
             Docs

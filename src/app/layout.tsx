@@ -21,9 +21,10 @@ const dmSans = DM_Sans({
 });
 
 const APP_NAME = "Blink";
-const APP_DEFAULT_TITLE = "Blink – Crypto Payments for the Real World";
+const APP_DEFAULT_TITLE = "Blink – Crypto payments at the counter, settled in local currency";
 const APP_TITLE_TEMPLATE = "%s - Blink";
-const APP_DESCRIPTION = "Blink is a native mobile app for real-world crypto payments: Bluetooth Tap-to-Pay and Scan-to-Pay (QR) on blockchain. Pay with crypto; merchants settle in fiat.";
+const APP_DESCRIPTION =
+  "Blink is a mobile app for merchants to accept real-world crypto payments via Bluetooth, with instant settlement in local currency. Built for emerging markets — spend USDC without tedious off-ramps; merchants avoid volatility.";
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
@@ -35,17 +36,22 @@ export const metadata: Metadata = {
   keywords: [
     'Blink',
     'crypto payments',
-    'Blockchain',
+    'Bluetooth payments',
+    'BLE',
+    'USDC',
     'Stellar',
     'Solana',
     'Base',
-    'Bluetooth payments',
-    'QR payments',
+    'Nigeria',
+    'Kenya',
+    'Ghana',
+    'South Africa',
+    'emerging markets',
     'stablecoins',
     'Web3',
     'fintech',
-    'point of sale',
-    'merchant settlement'
+    'merchant settlement',
+    'NGN',
   ],
   authors: [{ name: "Blink App Team", url: "https://useblinkapp.com/" }],
   creator: "Blink",
