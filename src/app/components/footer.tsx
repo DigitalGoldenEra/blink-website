@@ -93,6 +93,12 @@ export default function Footer() {
             <Link href="#waitlist" className="hover:text-black transition-colors">
               Waitlist
             </Link>
+             <Link href="/privacy" className="hover:text-black transition-colors">
+              Privacy
+            </Link>
+             <Link href="/delete-account" className="hover:text-black transition-colors">
+              Delete Account
+            </Link>
           </div>
 
           <div className="flex gap-4">
