@@ -58,7 +58,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         <Link href="/" ref={logoRef}>
-          <span className="font-heading text-2xl font-bold text-black tracking-tight">
+          <span className="font-heading text-2xl font-bold text-black">
             Blink
           </span>
         </Link>
@@ -74,10 +74,10 @@ export default function Navbar() {
             Features
           </Link>
           <Link
-            href="#about"
+            href="#whyblink"
             className="hover:text-black transition-colors duration-300"
           >
-            About
+            Why Blink
           </Link>
           <Link
             href="#how-it-works"
@@ -91,21 +91,15 @@ export default function Navbar() {
           >
             Who it&apos;s for
           </Link>
-          <Link
-            href="#waitlist"
-            className="hover:text-black transition-colors duration-300"
-          >
-            Waitlist
-          </Link>
         </div>
 
         <div
           ref={rightLinksRef}
           className="hidden md:flex items-center gap-8 text-zinc-600 font-medium"
         >
-          <Link href="/doc">
+          <Link href="#waitlist">
             <button className="px-5 py-2 cursor-pointer rounded-md bg-black text-white border border-black hover:bg-zinc-800 transition-all duration-300 font-medium cursor-pointer">
-              Open Docs
+              Waitlist
             </button>
           </Link>
         </div>
@@ -123,8 +117,8 @@ export default function Navbar() {
           <Link href="#features" onClick={() => setIsOpen(false)}>
             Features
           </Link>
-          <Link href="#about" onClick={() => setIsOpen(false)}>
-            About
+          <Link href="#whyblink" onClick={() => setIsOpen(false)}>
+            Why Blink
           </Link>
           <Link href="#how-it-works" onClick={() => setIsOpen(false)}>
             How it works
@@ -134,9 +128,6 @@ export default function Navbar() {
           </Link>
           <Link href="#waitlist" onClick={() => setIsOpen(false)}>
             Waitlist
-          </Link>
-          <Link href="/doc" onClick={() => setIsOpen(false)}>
-            Docs
           </Link>
         </div>
       )}

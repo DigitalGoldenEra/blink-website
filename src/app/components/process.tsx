@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   DollarSign,
+  Currency,
   Radio,
   Smartphone,
   Fingerprint,
@@ -16,9 +17,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
-    icon: DollarSign,
+    icon: Currency,
     title: "Merchant requests payment",
-    desc: "The receiver enters amount and currency in Blink and taps “Request payment”.",
+    desc: "The merchant enters amount and currency in Blink and taps “Request payment”.",
   },
   {
     icon: Radio,

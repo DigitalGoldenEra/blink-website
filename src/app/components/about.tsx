@@ -57,7 +57,7 @@ export default function AboutSection() {
 
   return (
     <section
-      id="about"
+      id="whyblink"
       ref={sectionRef}
       className="py-20 md:py-32 px-6 border-t border-zinc-200 bg-zinc-50"
     >

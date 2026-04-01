@@ -69,37 +69,11 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
           <Link href="/">
-            <span className="font-heading text-2xl font-bold text-black tracking-tight">
+            <span className="font-heading text-2xl font-bold text-black">
               Blink
             </span>
           </Link>
 
-          <div
-            ref={linksRef}
-            className="flex flex-wrap justify-center gap-8 text-zinc-600 font-medium"
-          >
-            <Link href="#features" className="hover:text-black transition-colors">
-              Features
-            </Link>
-            <Link href="#about" className="hover:text-black transition-colors">
-              About
-            </Link>
-            <Link href="#how-it-works" className="hover:text-black transition-colors">
-              How it works
-            </Link>
-            <Link href="#use-cases" className="hover:text-black transition-colors">
-              Who it&apos;s for
-            </Link>
-            <Link href="#waitlist" className="hover:text-black transition-colors">
-              Waitlist
-            </Link>
-             <Link href="/privacy" className="hover:text-black transition-colors">
-              Privacy
-            </Link>
-             <Link href="/delete-account" className="hover:text-black transition-colors">
-              Delete Account
-            </Link>
-          </div>
 
           <div className="flex gap-4">
             {socialLinks.map(({ icon: Icon, href, label }) => (

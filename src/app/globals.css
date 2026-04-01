@@ -11,7 +11,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-dm);
-  --font-heading: var(--font-instrument);
+  --font-heading: var(--font-bebas);
 }
 
 * {
@@ -29,7 +29,7 @@ body {
 }
 
 .font-heading {
-  font-family: var(--font-instrument), Georgia, serif;
+  font-family: var(--font-bebas), sans-serif;
 }
 
 ::selection {

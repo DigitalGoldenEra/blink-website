@@ -106,10 +106,10 @@ export default function HeroSection() {
       <div className="max-w-5xl mx-auto text-center py-24 md:py-32 lg:pt-10">
         <h1
           ref={headlineRef}
-          className="font-heading flex flex-col items-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black leading-[1.1] tracking-tight"
+          className="font-heading flex flex-col items-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black"
         >
           <span className="hero-headline-line block">Pay with crypto.</span>
-          <span className="hero-headline-line block">Live in the real world.</span>
+          <span className="hero-headline-line block -mt-6">Live in the real world.</span>
         </h1>
 
         <p
@@ -117,9 +117,7 @@ export default function HeroSection() {
           className="mt-2 text-xl md:text-2xl text-black max-w-3xl mx-auto font-light"
         >
           Blink lets merchants accept real-world crypto payments over Bluetooth
-          and get instant settlement in their local currency — so payers spend
-          stablecoins without painful off-ramps, and businesses avoid crypto
-          volatility.
+          and get instant settlement in their local currency. You can also spend your crypto like cash
         </p>
 
         <div
@@ -128,9 +126,9 @@ export default function HeroSection() {
         >
           <a
             href="#waitlist"
-            className="inline-flex items-center justify-center rounded-xl bg-black px-8 py-3.5 text-sm font-semibold text-white shadow-md shadow-black/10 transition hover:bg-zinc-800"
+            className="items-center justify-center rounded-xl bg-black px-10 py-3 text-xl text-white font-heading cursor-pointer transition"
           >
-            Join the waitlist
+            JOIN THE WAITLIST
           </a>
           {/* <div
             ref={storeRowRef}

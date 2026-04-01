@@ -17,33 +17,33 @@ gsap.registerPlugin(ScrollTrigger);
 const services = [
   {
     icon: Bluetooth,
-    title: "Bluetooth Low Energy handoff",
-    desc: "The merchant creates a payment request; our backend issues a short, time-bound code; the receiver broadcasts it over BLE so the payer can discover the right checkout with no manual address entry.",
+    title: "Tap to Pay with Bluetooth",
+    desc: "Just hold your phone near the checkout. Blink connects automatically using Bluetooth, no copying messy wallet addresses.",
   },
   {
     icon: Radio,
-    title: "Nearby discovery",
-    desc: "Payers tap “Find receiver” and scan BLE advertisements to pick up the handoff code, then fetch full payment details — receiver, amount, rails, pool addresses — from Blink.",
+    title: "Instant Connection",
+    desc: "Open the app and instantly find the merchant. Blink securely gets the payment details so you know exactly who and what you are paying.",
   },
   {
     icon: Wallet,
-    title: "Multi-chain unified wallet",
-    desc: "One identity with a consistent user ID and wallet surface across supported chains. Non-custodial: Blink never holds your private keys or funds.",
+    title: "One Wallet, Every Network",
+    desc: "Manage all your crypto in one secure, unified account. You maintain full control over your private keys—we never hold your funds.",
   },
   {
     icon: ArrowLeftRight,
-    title: "Stellar, Solana & Base",
-    desc: "Launch support on three networks with stablecoin focus (USDC) so spend amounts stay understandable while routing can use the best path.",
+    title: "Built for Stablecoins",
+    desc: "Pay seamlessly using fast networks like Stellar, Solana, and Base. We focus on USDC so your everyday purchases stay completely predictable.",
   },
   {
     icon: Landmark,
-    title: "Settlement & liquidity",
-    desc: "Merchants get automated path payments or liquidity-pool processing so balances settle in NGN or other local currency — not in volatile crypto.",
+    title: "Local Currency Settlement",
+    desc: "Merchants don't need to worry about crypto volatility. They get paid securely and instantly in their local fiat currency.",
   },
   {
     icon: Activity,
-    title: "Live updates & payouts",
-    desc: "WebSockets keep both sides in sync as the payment clears. Sellers can withdraw local currency via bank transfer or virtual accounts when they’re ready.",
+    title: "Real-time Updates",
+    desc: "You can see your payment clear in real-time. Merchants can then smoothly withdraw their money directly to their local bank account.",
   },
 ];
 
@@ -102,12 +102,10 @@ export default function ServicesSection() {
           ref={titleRef}
           className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-black text-center mb-6"
         >
-          Handoff, wallet, and settlement in one flow
+          Everything you need in one tap
         </h2>
         <p className="text-zinc-600 text-center text-lg max-w-2xl mx-auto mb-20">
-          Core product pillars from the Blink architecture — Bluetooth-first
-          discovery, one wallet identity across chains, and local-currency
-          settlement behind the scenes.
+          We've handled the complicated crypto infrastructure behind the scenes so you don't have to. Enjoy seamless Bluetooth payments, a unified wallet, and instant local payouts.
         </p>
 
         <div

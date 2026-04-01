@@ -1,15 +1,14 @@
 import type { Metadata, Viewport } from 'next';
-import { Instrument_Serif, DM_Sans } from 'next/font/google';
+import { Bebas_Neue, DM_Sans } from 'next/font/google';
 import 'lenis/dist/lenis.css';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import SmoothScroll from './components/smooth-scroll';
 
-const instrumentSerif = Instrument_Serif({
+const bebasNeue = Bebas_Neue({
   subsets: ['latin'],
   weight: '400',
-  style: ['normal', 'italic'],
-  variable: '--font-instrument',
+  variable: '--font-bebas',
   display: 'swap',
 });
 
@@ -59,7 +58,7 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  metadataBase: new URL("https://useblinkapp.com/"), 
+  metadataBase: new URL("https://useblinkapp.com/"),
   alternates: {
     canonical: "/",
   },
@@ -72,7 +71,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/logo.svg", // Replace with a massive rich OG image.
+        url: "/blink-logo.png", // Replace with a massive rich OG image.
         width: 1200,
         height: 630,
         alt: "Blink – Real-world crypto payments",
@@ -81,11 +80,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@useblinkapp", 
+    site: "@useblinkapp",
     creator: "@useblinkapp",
     title: APP_DEFAULT_TITLE,
     description: APP_DESCRIPTION,
-    images: ["/logo.svg"], // Same OG image
+    images: ["/blink-logo.png"], // Same OG image
   },
   robots: {
     index: true,
@@ -114,7 +113,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${bebasNeue.variable} ${dmSans.variable}`}>
       <body className={dmSans.className}>
         <SmoothScroll>
           {children}
