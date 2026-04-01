@@ -99,7 +99,7 @@ export default function Navbar() {
         >
           <Link href="#waitlist">
             <button className="px-5 py-2 cursor-pointer rounded-md bg-black text-white border border-black hover:bg-zinc-800 transition-all duration-300 font-medium cursor-pointer">
-              Waitlist
+              Join our waitlist
             </button>
           </Link>
         </div>
