@@ -102,14 +102,14 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative flex items-center justify-center overflow-hidden min-h-[85vh] md:min-h-screen px-4">
+      className="relative flex items-center justify-center overflow-hidden min-h-[85vh] md:min-h-screen">
       <div className="max-w-5xl mx-auto text-center py-24 md:py-32 lg:pt-10">
         <h1
           ref={headlineRef}
           className="font-heading flex flex-col items-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black"
         >
           <span className="hero-headline-line block">Pay with crypto.</span>
-          <span className="hero-headline-line block -mt-6">Live in the real world.</span>
+          <span className="hero-headline-line block lg:-mt-6">Live in the real world.</span>
         </h1>
 
         <p
