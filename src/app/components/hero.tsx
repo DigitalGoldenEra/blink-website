@@ -116,7 +116,7 @@ export default function HeroSection() {
           ref={sublineRef}
           className="mt-2 text-xl md:text-2xl text-black max-w-3xl mx-auto font-light"
         >
-          Blink lets merchants accept real-world crypto payments over Bluetooth
+          Blink lets merchants accept crypto payments over Bluetooth
           and get instant settlement in their local currency. You can also spend your crypto like cash
         </p>
 
