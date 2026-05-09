@@ -113,6 +113,9 @@ export default function DownloadSection() {
             </span>
           </a>
         </div>
+        <p className="mt-8 text-xs text-zinc-500 font-medium max-w-sm mx-auto opacity-80">
+          * iOS Users: After installing <b>TestFlight</b> from the App Store, click the iOS button above again to install the <b>Blink</b> app.
+        </p>
       </div>
     </section>
   );

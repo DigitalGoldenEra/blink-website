@@ -152,6 +152,9 @@ export default function HeroSection() {
               </span>
             </a>
           </div>
+          <p className="text-[10px] md:text-xs text-zinc-500 font-medium max-w-xs text-center opacity-80">
+            * iOS Users: After installing <b>TestFlight</b>, click the iOS button again to download the <b>Blink</b> app.
+          </p>
         </div>
       </div>
     </section>
