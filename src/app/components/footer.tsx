@@ -51,7 +51,7 @@ export default function Footer() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="#hero" className="flex items-center gap-3 group">
             <img src="/blink-logo.png" alt="Blink Logo" className="w-10 rounded-lg shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-300" />
             <span className="font-heading text-3xl font-bold text-white tracking-tight">
               Blink

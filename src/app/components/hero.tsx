@@ -92,6 +92,7 @@ export default function HeroSection() {
 
   return (
     <section
+      id="hero"
       ref={containerRef}
       className="relative flex items-center justify-center overflow-hidden min-h-[85vh] md:min-h-screen">
       <div className="max-w-5xl mx-auto text-center py-24 md:py-32 lg:pt-10">
