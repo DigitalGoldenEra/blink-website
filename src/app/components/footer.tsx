@@ -77,7 +77,7 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 text-sm font-light">
           <p>© {currentYear} Blink Labs. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="https://useblinkapp.substack.com/p/crypto-works-until-you-try-to-spend?r=7bclo4" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">How to use</a>
+            <a href="https://useblinkapp.substack.com/p/blink-is-live-the-future-of-crypto?r=7bclo4" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">How to use</a>
           </div>
         </div>
       </div>
