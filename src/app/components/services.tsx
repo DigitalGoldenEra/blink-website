@@ -38,7 +38,7 @@ const services = [
   {
     icon: Landmark,
     title: "Local Currency Settlement",
-    desc: "Merchants don't need to worry about crypto volatility. They get paid securely and instantly in their local fiat currency.",
+    desc: "Merchants don't need to worry about crypto volatility. They get paid securely and instantly in their local fiat currency. Seamless and fast",
   },
   {
     icon: Activity,
@@ -49,40 +49,65 @@ const services = [
 
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
+  const horizontalRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 1024px)", () => {
+        // Horizontal Scroll for Desktop
+        const totalWidth = horizontalRef.current?.scrollWidth || 0;
+        const windowWidth = window.innerWidth;
+        const xTranslate = -(totalWidth - windowWidth + 100);
+
+        const horizontalScroll = gsap.to(horizontalRef.current, {
+          x: xTranslate,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: () => `+=${totalWidth}`,
+            scrub: 1,
+            pin: true,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        // Individual card animations
+        const cards = gsap.utils.toArray(".service-card");
+        cards.forEach((card: any) => {
+          gsap.fromTo(
+            card.querySelector(".icon-box"),
+            { scale: 0.9, opacity: 0.8 },
+            {
+              scale: 1.1,
+              opacity: 1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: card,
+                containerAnimation: horizontalScroll,
+                start: "left center",
+                end: "right center",
+                scrub: true,
+              },
+            }
+          );
+        });
+      });
+
+      // Simple reveal for title
       gsap.fromTo(
         titleRef.current,
-        { opacity: 0, y: 50 },
+        { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 1,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-
-      const cards = cardsRef.current?.children || [];
-      gsap.fromTo(
-        cards,
-        { opacity: 0, y: 60 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          stagger: 0.1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
           },
         }
       );
@@ -95,35 +120,51 @@ export default function ServicesSection() {
     <section
       id="features"
       ref={sectionRef}
-      className="py-20 md:py-32 px-6 border-t border-zinc-200 bg-white"
+      className="relative min-h-screen bg-zinc-950 overflow-hidden py-24 lg:py-32"
     >
-      <div className="max-w-6xl mx-auto">
-        <h2
-          ref={titleRef}
-          className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-black text-center mb-6"
-        >
-          Everything you need in one tap
-        </h2>
-        <p className="text-zinc-600 text-center text-lg max-w-2xl mx-auto mb-20">
-          We've handled the complicated crypto infrastructure behind the scenes so you don't have to. Enjoy seamless Bluetooth payments, a unified wallet, and instant local payouts.
-        </p>
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
+      {/* Title Section - Relative to keep it above the cards */}
+      <div
+        ref={titleRef}
+        className="relative z-10 mb-20 lg:mb-32 max-w-7xl mx-auto"
+      >
+        <div className="text-center lg:mt-[1rem]">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6">
+            Everything you need <br />
+            <span className="text-zinc-500 font-light italic">in one tap.</span>
+          </h2>
+          <p className="text-zinc-400 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
+            We've handled the complicated crypto infrastructure behind the scenes so you don't have to. Enjoy seamless payments and unified control.
+          </p>
+        </div>
+      </div>
+
+      <div className="relative w-full overflow-hidden lg:overflow-visible">
         <div
-          ref={cardsRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          ref={horizontalRef}
+          className="flex flex-col lg:flex-row gap-8 px-6 lg:px-[10vw] lg:w-max items-start"
         >
-          {services.map((service) => (
+          {services.map((service, i) => (
             <div
               key={service.title}
-              className="group p-8 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-zinc-400 hover:bg-white transition-all duration-500"
+              className="service-card group relative w-full lg:w-[400px] xl:w-[450px] p-8 lg:p-12 rounded-[2rem] border border-zinc-800 bg-zinc-900/50 backdrop-blur-xl hover:border-zinc-600 transition-all duration-500 flex flex-col justify-between "
             >
-              <div className="w-12 h-12 rounded-xl bg-zinc-200 flex items-center justify-center mb-6 group-hover:bg-zinc-300 transition-colors">
-                <service.icon className="w-6 h-6 text-black" />
+              <div className="icon-box w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-zinc-800 flex items-center justify-center mb-10 group-hover:bg-blue-500/10 group-hover:text-blue-400 transition-all duration-500">
+                <service.icon className="w-8 h-8 lg:w-10 lg:h-10 text-zinc-400 group-hover:text-blue-400" />
               </div>
-              <h3 className="font-heading text-xl font-semibold text-black mb-3">
-                {service.title}
-              </h3>
-              <p className="text-zinc-600 leading-relaxed">{service.desc}</p>
+
+              <div>
+                <h3 className="font-heading text-2xl lg:text-3xl font-semibold text-white mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-zinc-400 text-base lg:text-lg font-light">
+                  {service.desc}
+                </p>
+              </div>
+
+              <div className="absolute bottom-0 left-12 right-12 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
             </div>
           ))}
         </div>

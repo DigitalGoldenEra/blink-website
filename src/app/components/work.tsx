@@ -99,7 +99,6 @@ export default function WorkSection() {
                     {project.category}
                   </span>
                 </div>
-                <ArrowUpRight className="w-5 h-5 text-zinc-400 group-hover:text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 shrink-0" />
               </div>
               <div>
                 <h3 className="font-heading text-2xl font-semibold text-black mb-3">

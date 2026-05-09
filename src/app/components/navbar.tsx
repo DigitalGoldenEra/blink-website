@@ -57,15 +57,16 @@ export default function Navbar() {
       className="max-w-5xl mx-auto backdrop-blur-sm bg-white/20 rounded-md sticky top-5 z-50"
     >
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-        <Link href="/" ref={logoRef}>
-          <span className="font-heading text-2xl font-bold text-black">
+        <Link href="/" ref={logoRef} className="flex items-center gap-2">
+          <img src="/blink-logo.png" className="w-10 rounded-lg" alt="Blink Logo" />
+          <span className="font-heading text-4xl leading-none font-bold mb-[-5px] text-black">
             Blink
           </span>
         </Link>
 
         <div
           ref={leftLinksRef}
-          className="hidden md:flex items-center gap-8 text-zinc-600 font-medium"
+          className="hidden md:flex items-center gap-8 text-zinc-600  text-sm"
         >
           <Link
             href="#features"
@@ -97,9 +98,9 @@ export default function Navbar() {
           ref={rightLinksRef}
           className="hidden md:flex items-center gap-8 text-zinc-600 font-medium"
         >
-          <Link href="#waitlist">
-            <button className="px-5 py-2 cursor-pointer rounded-md bg-black text-white border border-black hover:bg-zinc-800 transition-all duration-300 font-medium cursor-pointer">
-              Join our waitlist
+          <Link href="#download">
+            <button className="px-5 py-2 cursor-pointer rounded-md bg-black text-white border border-black transition-all duration-300 font-sm cursor-pointer">
+              Download App
             </button>
           </Link>
         </div>
@@ -126,8 +127,8 @@ export default function Navbar() {
           <Link href="#use-cases" onClick={() => setIsOpen(false)}>
             Who it&apos;s for
           </Link>
-          <Link href="#waitlist" onClick={() => setIsOpen(false)}>
-            Waitlist
+          <Link href="#download" onClick={() => setIsOpen(false)}>
+            Download
           </Link>
         </div>
       )}

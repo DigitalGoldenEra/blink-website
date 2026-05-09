@@ -16,16 +16,7 @@ function AppleMark({ className }: { className?: string }) {
   );
 }
 
-function GooglePlayMark({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
-      <path fill="#EA4335" d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.6 3 21.09 3 20.5z" />
-      <path fill="#FBBC04" d="M16.81 15.12L6.05 21.34 14.54 12.85l2.27 2.27z" />
-      <path fill="#34A853" d="M3.84 2.15C4.05 2.05 4.29 2 4.54 2c.31 0 .61.1.86.27l9.75 5.64L14.54 12 3.84 2.15z" />
-      <path fill="#4285F4" d="M20.16 10.81c.49.38.79.96.79 1.59s-.3 1.21-.79 1.59l-3.27 1.7-2.58-2.58 2.58-2.58 3.27 1.7z" />
-    </svg>
-  );
-}
+
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -124,82 +115,42 @@ export default function HeroSection() {
           ref={ctaRef}
           className="mt-12 flex flex-col items-center gap-8"
         >
-          <a
-            href="#waitlist"
-            className="items-center justify-center rounded-xl bg-black px-10 py-3 text-xl text-white font-heading cursor-pointer transition"
-          >
-            JOIN THE WAITLIST
-          </a>
-          {/* <div
+          <div
             ref={storeRowRef}
-            className="flex flex-wrap items-center justify-center gap-3"
+            className="flex flex-wrap items-center justify-center gap-4"
           >
-            <div className="relative">
-              <button
-                type="button"
-                aria-expanded={openStoreTip === "apple"}
-                aria-describedby={
-                  openStoreTip === "apple" ? "hero-tip-apple" : undefined
-                }
-                onClick={() =>
-                  setOpenStoreTip((s) => (s === "apple" ? null : "apple"))
-                }
-                className="flex items-center gap-2.5 rounded-xl border border-zinc-300 bg-black px-4 py-2.5 text-left text-white shadow-sm transition hover:bg-zinc-900"
-              >
-                <AppleMark className="h-7 w-7 shrink-0 text-white" />
-                <span className="flex flex-col leading-tight">
-                  <span className="text-[10px] font-medium uppercase tracking-wide text-zinc-400">
-                    Download on the
-                  </span>
-                  <span className="text-sm font-semibold">App Store</span>
+            <a
+              href="https://testflight.apple.com/join/gNkuP7cP"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 rounded-xl border border-zinc-300 bg-black px-5 py-3 text-left text-white transition hover:bg-zinc-900"
+            >
+              <AppleMark className="h-7 w-7 shrink-0 text-white" />
+              <span className="flex flex-col leading-tight">
+                <span className="text-[10px] font-medium uppercase tracking-wide text-zinc-400">
+                  Download on
                 </span>
-              </button>
-              {openStoreTip === "apple" && (
-                <div
-                  id="hero-tip-apple"
-                  role="tooltip"
-                  className="absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-zinc-900 px-3 py-2 text-xs font-medium text-white shadow-lg"
-                >
-                  Coming soon
-                  <span className="absolute left-1/2 top-full -mt-px -translate-x-1/2 border-[6px] border-transparent border-t-zinc-900" />
-                </div>
-              )}
-            </div>
+                <span className="text-sm font-semibold">TestFlight (iOS)</span>
+              </span>
+            </a>
 
-            <div className="relative">
-              <button
-                type="button"
-                aria-expanded={openStoreTip === "google"}
-                aria-describedby={
-                  openStoreTip === "google" ? "hero-tip-google" : undefined
-                }
-                onClick={() =>
-                  setOpenStoreTip((s) => (s === "google" ? null : "google"))
-                }
-                className="flex items-center gap-2.5 rounded-xl border border-zinc-300 bg-white px-4 py-2.5 text-left shadow-sm transition hover:bg-zinc-50"
-              >
-                <GooglePlayMark className="h-7 w-7 shrink-0" />
-                <span className="flex flex-col leading-tight">
-                  <span className="text-[10px] font-medium uppercase tracking-wide text-zinc-500">
-                    Get it on
-                  </span>
-                  <span className="text-sm font-semibold text-zinc-900">
-                    Google Play
-                  </span>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.fortichain.blink"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 rounded-xl border border-zinc-300 bg-white px-5 py-3 text-left  transition hover:bg-zinc-50"
+            >
+              <img src="https://cdn-icons-png.freepik.com/512/300/300218.png" alt="Google Play" className="h-7 w-7 shrink-0" />
+              <span className="flex flex-col leading-tight">
+                <span className="text-[10px] font-medium uppercase tracking-wide text-zinc-500">
+                  Get it on
                 </span>
-              </button>
-              {openStoreTip === "google" && (
-                <div
-                  id="hero-tip-google"
-                  role="tooltip"
-                  className="absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-zinc-900 px-3 py-2 text-xs font-medium text-white shadow-lg"
-                >
-                  Coming soon
-                  <span className="absolute left-1/2 top-full -mt-px -translate-x-1/2 border-[6px] border-transparent border-t-zinc-900" />
-                </div>
-              )}
-            </div>
-          </div> */}
+                <span className="text-sm font-semibold text-zinc-900">
+                  Google Play
+                </span>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
