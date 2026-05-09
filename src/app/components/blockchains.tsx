@@ -3,33 +3,33 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Layers, Database, Globe, Coins, Shield, Zap, Link, Cpu } from "lucide-react";
+import { Zap, Shield, Link, Cpu } from "lucide-react";
 
 const chains = [
   {
     name: "Base",
-    icon: Database,
+    logo: "/logos/images.png",
     detail: "Next-gen Ethereum L2 built by Coinbase. Experience institutional-grade security with fraction-of-a-cent fees.",
     feature: "Ethereum L2",
     accent: "bg-blue-50",
   },
   {
     name: "Stellar",
-    icon: Layers,
+    logo: "/logos/images(2).png",
     detail: "The global standard for real-world asset tokenization and instant fiat-to-crypto on-ramps.",
     feature: "Global Payments",
     accent: "bg-indigo-50",
   },
   {
     name: "Solana",
-    icon: Globe,
+    logo: "/logos/solana.png",
     detail: "High-performance blockchain with sub-second finality. Built for the next billion users and massive retail scale.",
     feature: "High Speed",
     accent: "bg-emerald-50",
   },
   {
     name: "USDT (TRC20)",
-    icon: Coins,
+    logo: "/logos/usdt.png",
     detail: "Native support for the world's most liquid stablecoin on the Tron network, ensuring reliable cross-border transfers.",
     feature: "Liquid Stable",
     accent: "bg-red-50",
@@ -114,8 +114,8 @@ export default function BlockchainsSection() {
                   className="blockchain-card w-full p-8 md:p-10 rounded-2xl md:rounded-3xl border border-zinc-200 bg-white flex flex-col justify-between"
                 >
                   <div>
-                    <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl ${chain.accent} flex items-center justify-center mb-6 md:mb-10`}>
-                      <chain.icon className="w-8 h-8 md:w-10 md:h-10 stroke-[1.5px] text-zinc-900" />
+                    <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mb-6 md:mb-10">
+                      <img src={chain.logo} alt={chain.name} className="w-full h-full object-contain" />
                     </div>
                     <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-[10px] md:text-xs font-semibold uppercase tracking-widest mb-4 md:mb-6">
                       {chain.feature}

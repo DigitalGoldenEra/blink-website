@@ -17,36 +17,19 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const footerRef = useRef<HTMLElement>(null);
-  const linksRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         footerRef.current,
-        { opacity: 0 },
+        { opacity: 0, y: 20 },
         {
           opacity: 1,
+          y: 0,
           duration: 0.8,
           scrollTrigger: {
             trigger: footerRef.current,
             start: "top 95%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        linksRef.current?.children || [],
-        { opacity: 0, y: 10 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.05,
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: "top 95%",
-            toggleActions: "play none none reverse",
           },
         }
       );
@@ -56,7 +39,7 @@ export default function Footer() {
   }, []);
 
   const socialLinks = [
-    { icon: XIcon, href: "https://x.com/useblinkapp", label: "X (Twitter)" },
+    { icon: XIcon, href: "https://x.com/useblinkapp", label: "X" },
     { icon: Instagram, href: "https://www.instagram.com/useblinkapp/", label: "Instagram" },
     { icon: Send, href: "https://t.me/useblinkapp", label: "Telegram" },
   ];
@@ -64,35 +47,38 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="w-full border-t border-zinc-200 bg-zinc-50 py-12 md:py-16 px-6"
+      className="w-full bg-zinc-950 py-12 md:py-20 px-6 border-t border-zinc-900"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-          <Link href="/">
-            <span className="font-heading text-2xl font-bold text-black">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
+          <Link href="/" className="flex items-center gap-3 group">
+            <img src="/blink-logo.png" alt="Blink Logo" className="w-10 rounded-lg shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-300" />
+            <span className="font-heading text-3xl font-bold text-white tracking-tight">
               Blink
             </span>
           </Link>
 
-
-          <div className="flex gap-4">
+          <div className="flex gap-6">
             {socialLinks.map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-zinc-300 flex items-center justify-center text-zinc-600 hover:border-black hover:text-black transition-all duration-300"
+                className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:border-blue-400 hover:text-blue-400 hover:-translate-y-1 transition-all duration-300 shadow-sm"
                 aria-label={label}
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-5 h-5" />
               </a>
             ))}
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-zinc-200 text-center text-zinc-500 text-sm">
-          © {currentYear} Blink. All rights reserved.
+        <div className="mt-16 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 text-sm font-light">
+          <p>© {currentYear} Blink. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="https://useblinkapp.substack.com/p/crypto-works-until-you-try-to-spend?r=7bclo4" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">How to use</a>
+          </div>
         </div>
       </div>
     </footer>
