@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Instagram, Send } from "lucide-react";
+import { Instagram, Send, Linkedin } from "lucide-react";
 
 const XIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -42,6 +42,7 @@ export default function Footer() {
     { icon: XIcon, href: "https://x.com/useblinkapp", label: "X" },
     { icon: Instagram, href: "https://www.instagram.com/useblinkapp/", label: "Instagram" },
     { icon: Send, href: "https://t.me/useblinkapp", label: "Telegram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/blink-wallet/", label: "LinkedIn" },
   ];
 
   return (

@@ -138,18 +138,18 @@ export default function BlockchainsSection() {
                 </div>
               ))}
               
-              <div className="blockchain-card w-full p-12 rounded-2xl md:rounded-3xl border border-dashed border-blue-200 bg-blue-50/30 backdrop-blur-sm flex flex-col items-center justify-center text-center group transition-all duration-500 hover:bg-blue-50/50">
+              <div className="blockchain-card w-full p-12 rounded-2xl md:rounded-3xl border border-dashed border-zinc-300 bg-zinc-100/50 backdrop-blur-sm flex flex-col items-center justify-center text-center group transition-all duration-500 hover:bg-zinc-100/80">
                 <div className="relative mb-8">
-                  <div className="absolute inset-0 bg-blue-400 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity animate-pulse" />
-                  <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center relative">
-                    <div className="w-4 h-4 rounded-full bg-blue-500 animate-ping" />
-                    <div className="w-4 h-4 rounded-full bg-blue-500 absolute" />
+                  <div className="absolute inset-0 bg-zinc-400 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity animate-pulse" />
+                  <div className="w-16 h-16 rounded-full bg-zinc-200 flex items-center justify-center relative">
+                    <div className="w-4 h-4 rounded-full bg-black animate-ping" />
+                    <div className="w-4 h-4 rounded-full bg-black absolute" />
                   </div>
                 </div>
-                <h3 className="coming-soon-blink text-blue-600 font-bold text-2xl md:text-3xl tracking-tight mb-3">
+                <h3 className="coming-soon-blink text-black font-bold text-2xl md:text-3xl tracking-tight mb-3">
                   More Blockchains
                 </h3>
-                <p className="text-blue-400 font-medium text-lg md:text-xl">
+                <p className="text-zinc-500 font-medium text-lg md:text-xl">
                   Coming Soon
                 </p>
               </div>
