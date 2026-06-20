@@ -105,12 +105,6 @@ export default async function DunesPage() {
             allowFullScreen />
         </div>
 
-        <div className="w-full h-[75vh] bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-black/5 transition-all hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] mb-10">
-          <iframe src="https://dune.com/embeds/7764343/11730088" className="w-full h-full border-none bg-white"
-            title="Dune Analytics Stats"
-            allowFullScreen />
-        </div>
-
         {/* Iframe Container */}
         <div className="w-full h-[75vh] bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-black/5 transition-all hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] mb-10">
           <iframe
