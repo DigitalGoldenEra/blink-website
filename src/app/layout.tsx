@@ -1,21 +1,22 @@
 import type { Metadata, Viewport } from 'next';
-import { Bebas_Neue, DM_Sans } from 'next/font/google';
+import { Inter, Instrument_Serif } from 'next/font/google';
 import 'lenis/dist/lenis.css';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import SmoothScroll from './components/smooth-scroll';
 
-const bebasNeue = Bebas_Neue({
+const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
   weight: '400',
-  variable: '--font-bebas',
+  style: ['italic'],
+  variable: '--font-instrument',
   display: 'swap',
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-dm',
+  weight: ['400', '500', '600'],
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -105,7 +106,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#f6e4cf",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -113,8 +114,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${dmSans.variable}`}>
-      <body className={dmSans.className}>
+    <html
+      lang="en"
+      className={`${instrumentSerif.variable} ${inter.variable}`}
+    >
+      <body className={inter.className}>
         <SmoothScroll>
           {children}
           <Analytics />

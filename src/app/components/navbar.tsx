@@ -1,137 +1,70 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import gsap from "gsap";
+
+const links = [
+  { href: "#features", label: "Features" },
+  { href: "#how-it-works", label: "How it works" },
+  { href: "#chains", label: "Chains" },
+  { href: "#faq", label: "FAQ" },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
-  const logoRef = useRef<HTMLAnchorElement>(null);
-  const leftLinksRef = useRef<HTMLDivElement>(null);
-  const rightLinksRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    gsap.fromTo(
-      navRef.current,
-      { y: -80, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
-    );
-    gsap.fromTo(
-      logoRef.current,
-      { opacity: 0, x: -20 },
-      { opacity: 1, x: 0, duration: 0.6, delay: 0.2, ease: "power2.out" },
-    );
-    const leftLinks = leftLinksRef.current?.querySelectorAll("a");
-    const rightLinks = rightLinksRef.current?.querySelectorAll("a, button");
-    gsap.fromTo(
-      leftLinks || [],
-      { opacity: 0, y: -10 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        stagger: 0.08,
-        delay: 0.3,
-        ease: "power2.out",
-      },
-    );
-    gsap.fromTo(
-      rightLinks || [],
-      { opacity: 0, y: -10 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        stagger: 0.08,
-        delay: 0.4,
-        ease: "power2.out",
-      },
-    );
-  }, []);
 
   return (
-    <nav
-      ref={navRef}
-      className="max-w-5xl mx-auto backdrop-blur-sm bg-white/20 rounded-md sticky top-5 z-50"
-    >
-      <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-        <Link href="/" ref={logoRef} className="flex items-center gap-2">
-          <img src="/blink-logo.png" className="w-10 rounded-lg" alt="Blink Logo" />
-          <span className="font-heading text-4xl leading-none font-bold mb-[-5px] text-black">
-            Blink
-          </span>
+    <div className="absolute top-6 left-1/2 z-50 -translate-x-1/2">
+      {/* Floating pill */}
+      <div className="flex items-center gap-6 rounded-full bg-white px-5 py-2.5 shadow-lg">
+        <Link
+          href="/"
+          className="text-lg font-bold tracking-tight text-black"
+          onClick={() => setIsOpen(false)}
+        >
+          Blink.
         </Link>
 
-        <div
-          ref={leftLinksRef}
-          className="hidden md:flex items-center gap-8 text-zinc-600  text-sm"
-        >
-          <Link
-            href="#features"
-            className="hover:text-black transition-colors duration-300"
-          >
-            Features
-          </Link>
-          <Link
-            href="#whyblink"
-            className="hover:text-black transition-colors duration-300"
-          >
-            Why Blink
-          </Link>
-          <Link
-            href="#how-it-works"
-            className="hover:text-black transition-colors duration-300"
-          >
-            How it works
-          </Link>
-          <Link
-            href="#use-cases"
-            className="hover:text-black transition-colors duration-300"
-          >
-            Who it&apos;s for
-          </Link>
-        </div>
-
-        <div
-          ref={rightLinksRef}
-          className="hidden md:flex items-center gap-8 text-zinc-600 font-medium"
-        >
-          <Link href="#download">
-            <button className="px-5 py-2 cursor-pointer rounded-md bg-black text-white border border-black transition-all duration-300 font-sm cursor-pointer">
-              Download App
-            </button>
-          </Link>
-        </div>
-
         <button
-          className="md:hidden text-zinc-600 hover:text-black transition-colors cursor-pointer"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen((v) => !v)}
+          aria-label="Toggle menu"
+          className="relative flex h-5 w-6 flex-col items-center justify-center"
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          <span
+            className="absolute h-[2px] w-6 bg-black transition-all duration-300"
+            style={{
+              transitionTimingFunction: "cubic-bezier(0.77,0,0.175,1)",
+              transform: isOpen ? "rotate(45deg)" : "translateY(-4px)",
+            }}
+          />
+          <span
+            className="absolute h-[2px] w-6 bg-black transition-all duration-300"
+            style={{
+              transitionTimingFunction: "cubic-bezier(0.77,0,0.175,1)",
+              transform: isOpen ? "rotate(-45deg)" : "translateY(4px)",
+            }}
+          />
         </button>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden px-6 pb-6 flex flex-col gap-4 text-zinc-600 font-medium border-t border-zinc-200 pt-4">
-          <Link href="#features" onClick={() => setIsOpen(false)}>
-            Features
+      {/* Dropdown */}
+      <div
+        className={`absolute left-1/2 mt-3 w-56 -translate-x-1/2 rounded-2xl bg-white p-2 shadow-lg transition-all duration-300 ${isOpen
+            ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
+            : "pointer-events-none -translate-y-2 scale-95 opacity-0"
+          }`}
+      >
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            onClick={() => setIsOpen(false)}
+            className="block rounded-xl px-4 py-2.5 text-sm font-medium text-black/80 transition-colors hover:bg-black/5 hover:text-black"
+          >
+            {link.label}
           </Link>
-          <Link href="#whyblink" onClick={() => setIsOpen(false)}>
-            Why Blink
-          </Link>
-          <Link href="#how-it-works" onClick={() => setIsOpen(false)}>
-            How it works
-          </Link>
-          <Link href="#use-cases" onClick={() => setIsOpen(false)}>
-            Who it&apos;s for
-          </Link>
-          <Link href="#download" onClick={() => setIsOpen(false)}>
-            Download
-          </Link>
-        </div>
-      )}
-    </nav>
+        ))}
+      </div>
+    </div>
   );
 }

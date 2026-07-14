@@ -1,9 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+import { useState, useEffect } from "react";
+import { X } from "lucide-react";
+import Navbar from "./navbar";
 
-type StoreTip = "apple" | "google" | null;
+const HERO_VIDEO =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260711_090308_1dd0cea7-f9ba-4db4-8147-c7d746061c9e.mp4";
+
+const IOS_URL = "https://testflight.apple.com/join/gNkuP7cP";
+const ANDROID_URL =
+  "https://play.google.com/store/apps/details?id=com.fortichain.blink";
 
 function AppleMark({ className }: { className?: string }) {
   return (
@@ -16,147 +22,170 @@ function AppleMark({ className }: { className?: string }) {
   );
 }
 
-
+function PlayMark({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.7 1.7l-.1.1zm13.2 13.5-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2h-.1zm-.1-6.9L13.5 11 4.4 1.9c.4-.4 1-.4 1.7 0l10.6 6.5zM4.4 22.1l9.1-9.1 3.2 3.2L6.1 22.1c-.7.4-1.3.4-1.7 0z"
+      />
+    </svg>
+  );
+}
 
 export default function HeroSection() {
-  const containerRef = useRef<HTMLElement>(null);
-  const headlineRef = useRef<HTMLHeadingElement>(null);
-  const sublineRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-  const storeRowRef = useRef<HTMLDivElement>(null);
-  const [openStoreTip, setOpenStoreTip] = useState<StoreTip>(null);
+  const [mounted, setMounted] = useState(false);
+  const [visible, setVisible] = useState(false);
 
+  const openApps = () => {
+    setMounted(true);
+    // wait a frame so the entered state animates in from the initial state
+    requestAnimationFrame(() => setVisible(true));
+  };
+
+  const closeApps = () => {
+    setVisible(false);
+    // keep the node mounted until the exit transition finishes
+    setTimeout(() => setMounted(false), 300);
+  };
+
+  // close on Escape while the modal is mounted
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Split each headline line into words (do not split full innerHTML — that breaks <br> and tags)
-      const headline = headlineRef.current;
-      if (headline) {
-        const lines = headline.querySelectorAll(".hero-headline-line");
-        lines.forEach((lineEl) => {
-          const text = lineEl.textContent?.trim() ?? "";
-          const words = text.split(/\s+/).filter(Boolean);
-          lineEl.innerHTML = words
-            .map(
-              (word) =>
-                `<span class="inline-block overflow-hidden"><span class="inline-block translate-y-full">${word}</span></span>`
-            )
-            .join(" ");
-        });
-      }
-
-      const wordSpans = headlineRef.current?.querySelectorAll("span > span") || [];
-      gsap.to(wordSpans, {
-        y: 0,
-        duration: 0.8,
-        stagger: 0.05,
-        ease: "power3.out",
-        delay: 0.3,
-      });
-
-      gsap.fromTo(
-        sublineRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, delay: 0.9, ease: "power2.out" }
-      );
-
-      gsap.fromTo(
-        ctaRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, delay: 1.3, ease: "power2.out" }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  useEffect(() => {
-    const onDocMouseDown = (e: MouseEvent) => {
-      if (
-        openStoreTip &&
-        storeRowRef.current &&
-        !storeRowRef.current.contains(e.target as Node)
-      ) {
-        setOpenStoreTip(null);
-      }
-    };
+    if (!mounted) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpenStoreTip(null);
+      if (e.key === "Escape") closeApps();
     };
-    document.addEventListener("mousedown", onDocMouseDown);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("mousedown", onDocMouseDown);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [openStoreTip]);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mounted]);
 
   return (
-    <section
-      id="hero"
-      ref={containerRef}
-      className="relative flex items-center justify-center overflow-hidden min-h-[85vh] md:min-h-screen">
-      <div className="max-w-5xl mx-auto text-center py-24 md:py-32 lg:pt-10">
-        <h1
-          ref={headlineRef}
-          className="font-heading flex flex-col items-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black"
-        >
-          <span className="hero-headline-line block">Pay with crypto.</span>
-          <span className="hero-headline-line block lg:-mt-6">Live in the real world.</span>
-        </h1>
+    <section id="hero" className="relative mb-[-25px] h-screen overflow-hidden">
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src={HERO_VIDEO} type="video/mp4" />
+      </video>
 
-        <p
-          ref={sublineRef}
-          className="mt-2 text-xl md:text-2xl text-black max-w-3xl mx-auto font-light"
-        >
-          Blink lets merchants accept crypto payments over Bluetooth
-          and get instant settlement in their local currency. You can also spend your crypto like cash
-        </p>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/20" />
 
-        <div
-          ref={ctaRef}
-          className="mt-12 flex flex-col items-center gap-8"
-        >
-          <div
-            ref={storeRowRef}
-            className="flex flex-wrap items-center justify-center gap-4"
-          >
-            <a
-              href="https://testflight.apple.com/join/gNkuP7cP"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2.5 rounded-xl border border-zinc-300 bg-black px-5 py-3 text-left text-white transition hover:bg-zinc-900"
+      <Navbar />
+
+      {/* Hero content */}
+      <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-12 md:pb-16">
+        <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
+          <h1 className="text-5xl font-normal leading-[1.1] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[96px]">
+            Spend crypto
+            <br />
+            without{" "}
+            <em
+              className="not-italic"
+              style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontStyle: "italic",
+              }}
             >
-              <AppleMark className="h-7 w-7 shrink-0 text-white" />
-              <span className="flex flex-col leading-tight">
-                <span className="text-[10px] font-medium uppercase tracking-wide text-zinc-400">
-                  Download on
-                </span>
-                <span className="text-sm font-semibold">TestFlight (iOS)</span>
-              </span>
-            </a>
+              the friction
+            </em>
+          </h1>
 
-            <a
-              href="https://play.google.com/store/apps/details?id=com.fortichain.blink"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2.5 rounded-xl border border-zinc-300 bg-white px-5 py-3 text-left  transition hover:bg-zinc-50"
-            >
-              <img src="https://cdn-icons-png.freepik.com/512/300/300218.png" alt="Google Play" className="h-7 w-7 shrink-0" />
-              <span className="flex flex-col leading-tight">
-                <span className="text-[10px] font-medium uppercase tracking-wide text-zinc-500">
-                  Get it on
-                </span>
-                <span className="text-sm font-semibold text-zinc-900">
-                  Google Play
-                </span>
-              </span>
-            </a>
-          </div>
-          <p className="text-[10px] md:text-xs text-zinc-500 font-medium max-w-xs text-center opacity-80">
-            * iOS Users: After installing <b>TestFlight</b>, click the iOS button again to download the <b>Blink</b> app.
+          <p className="mt-6 max-w-[420px] text-sm font-medium text-white/80 md:text-base">
+            Blink lets you spend crypto like cash and lets merchants settle
+            instantly in local currency — over Bluetooth, no addresses.
           </p>
+
+          {/* CTA bar */}
+          <div className="mt-8 flex items-center rounded-xl bg-black/25 py-1 pl-6 pr-1 backdrop-blur-md">
+            <p className="hidden text-sm font-medium text-white sm:block">
+              No addresses. No off-ramps. Just tap, confirm, settled.
+            </p>
+            <p className="text-sm font-medium text-white sm:hidden">
+              Just tap and settle.
+            </p>
+            <button
+              type="button"
+              onClick={openApps}
+              className="ml-4 rounded-xl bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-white/90"
+            >
+              Get the app
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Download popup */}
+      {mounted && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center px-6"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Download Blink"
+        >
+          <div
+            className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ease-out ${
+              visible ? "opacity-100" : "opacity-0"
+            }`}
+            onClick={closeApps}
+          />
+
+          <div
+            className={`relative w-full max-w-sm rounded-3xl bg-[#FFF9F2] p-8 text-center shadow-2xl transition-all duration-300 ${
+              visible
+                ? "translate-y-0 scale-100 opacity-100"
+                : "translate-y-4 scale-95 opacity-0"
+            }`}
+            style={{ transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)" }}
+          >
+            <button
+              type="button"
+              onClick={closeApps}
+              aria-label="Close"
+              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-[#321C04]/60 transition hover:bg-[#321C04]/10 hover:text-[#321C04]"
+            >
+              <X size={18} />
+            </button>
+
+            <h3 className="text-2xl font-semibold tracking-tight text-[#321C04]">
+              Get Blink
+            </h3>
+            <p className="mx-auto mt-2 max-w-xs text-sm font-medium text-[#321C04]/60">
+              Download for your device and start paying in a blink.
+            </p>
+
+            <div className="mt-7 flex flex-col gap-3">
+              <a
+                href={IOS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 rounded-xl bg-[#321C04] px-6 py-3.5 text-[#FFF9F2] transition hover:bg-[#1F1003]"
+              >
+                <AppleMark className="h-5 w-5" />
+                <span className="text-sm font-medium">Download for iOS</span>
+              </a>
+              <a
+                href={ANDROID_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 rounded-xl bg-[#D9C4AA] px-6 py-3.5 text-[#321C04] transition hover:bg-[#CEBA9E]"
+              >
+                <PlayMark className="h-5 w-5" />
+                <span className="text-sm font-medium">Get it on Google Play</span>
+              </a>
+            </div>
+
+            <p className="mx-auto mt-5 max-w-xs text-[11px] leading-relaxed text-[#321C04]/50">
+              iOS users: after installing TestFlight, tap the iOS button again to
+              install Blink.
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

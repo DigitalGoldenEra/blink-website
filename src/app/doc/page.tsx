@@ -1,158 +1,166 @@
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import { Bluetooth, QrCode, Smartphone, Store, ShieldCheck, Zap } from "lucide-react";
-import Link from "next/link";
+import DocShell from "../components/doc-shell";
+import { Bluetooth, Smartphone, ShieldCheck, Zap } from "lucide-react";
+
+const payerCards = [
+  {
+    icon: Smartphone,
+    title: "1. Enable Bluetooth",
+    body: "Ensure your smartphone's Bluetooth is turned on. When you're ready to check out, simply open the Blink App.",
+  },
+  {
+    icon: Bluetooth,
+    title: "2. Tap to Receive Request",
+    body: "Bring your phone close to the merchant's device. Blink will automatically detect the local Bluetooth payment broadcast and render the checkout screen instantly.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "3. Approve Transaction",
+    body: "Review the exact fiat equivalent mapping to your chosen crypto asset. Use Face ID or biometrics to securely sign the transaction strictly locally on your device.",
+  },
+  {
+    icon: Zap,
+    title: "4. Instant Settlement",
+    body: "The transaction is pushed permanently onchain (Stellar, Base, Solana, etc). Confirmation typically executes in under 5 seconds. You're good to go!",
+  },
+];
+
+const merchantSteps = [
+  {
+    title: "Input the Bill Amount",
+    body: (
+      <>
+        On the Blink App, type in the final charge amount natively in your
+        preferred fiat currency. The system handles real-time oracle exchange
+        rates.
+      </>
+    ),
+  },
+  {
+    title: "Broadcast the Payment Request",
+    body: (
+      <>
+        Press <b>&ldquo;Receive&rdquo;</b>. Blink will instantly activate a
+        Bluetooth Low-Energy beacon bridging data to any proximate customer phone.
+        A <b>Scan-to-Pay QR code</b> will also be actively displayed on screen for
+        cross-compatibility fallback.
+      </>
+    ),
+  },
+  {
+    title: "Wait for User Signature",
+    body: (
+      <>
+        The App listens momentarily while the customer signs on their own
+        hardware. Do not close the screen.
+      </>
+    ),
+  },
+  {
+    title: "Fiat Finality",
+    body: (
+      <>
+        Once the blockchain states finalize, Blink&apos;s smart bridges swap the
+        incoming crypto for fiat immediately and flag your interface with a glowing
+        green success screen. You acquire zero volatility exposure.
+      </>
+    ),
+  },
+];
 
 export default function Doc() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="bg-zinc-50 border-b border-zinc-200">
-        <div className="px-4 py-4">
-          <Navbar />
+    <DocShell
+      eyebrow="Official Documentation"
+      title={
+        <>
+          How to use <span className="serif-italic">Blink</span>
+        </>
+      }
+      intro="The complete guide to setting up and using the Blink mobile app for real-world crypto payments. We rely on Bluetooth Low-Energy to guarantee seamless checkouts across iOS and Android."
+    >
+      {/* Architecture note */}
+      <div className="flex items-start gap-4 rounded-2xl border border-[#D9C4AA] bg-[#F6E4CF] p-6">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#321C04]">
+          <Bluetooth className="h-5 w-5 text-[#FFF9F2]" strokeWidth={1.6} />
         </div>
-        <div className="max-w-4xl mx-auto px-6 py-20 lg:py-28 text-center pt-24">
-          <span className="text-zinc-500 font-medium text-sm uppercase tracking-widest mb-4 block">
-            Official Documentation
-          </span>
-          <h1 className="font-heading text-5xl md:text-7xl font-bold text-black mb-6">
-            How to use Blink
-          </h1>
-          <p className="text-zinc-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            The complete guide to setting up and using the Blink mobile app for real-world crypto payments. We rely on Bluetooth low-energy to guarantee seamless checkouts across iOS and Android.
+        <div>
+          <h4 className="mb-1 font-semibold text-[#321C04]">
+            Architecture Update: Bluetooth over NFC
+          </h4>
+          <p className="text-sm leading-relaxed text-[#321C04]/70">
+            To provide standard, cross-platform compatibility across all mobile
+            devices without OS-level restrictions (like Apple&apos;s closed NFC
+            constraints), <b className="text-[#321C04]">Blink utilizes Bluetooth
+            Low-Energy (BLE) as the primary tap-to-pay mechanism</b>, backed by a
+            QR code fallback.
           </p>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-20 pb-32">
-        <div className="prose prose-zinc max-w-none">
-          {/* Transition note */}
-          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 mb-12 flex gap-4 items-start">
-            <div className="p-2 bg-blue-100 rounded-full text-blue-600 shrink-0">
-              <Bluetooth className="w-6 h-6" />
+      {/* Payers */}
+      <h2 className="mt-12 border-b border-[#321C04]/10 pb-4 text-2xl font-medium tracking-tight text-[#321C04] md:text-3xl">
+        For Payers (Customers)
+      </h2>
+      <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+        {payerCards.map((c) => {
+          const Icon = c.icon;
+          return (
+            <div
+              key={c.title}
+              className="rounded-3xl border border-[#D9C4AA]/60 bg-[#F6E4CF] p-8 transition-colors hover:bg-[#f0dcc2]"
+            >
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#321C04]">
+                <Icon className="h-5 w-5 text-[#FFF9F2]" strokeWidth={1.5} />
+              </div>
+              <h3 className="mb-3 text-xl font-medium text-[#321C04]">
+                {c.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-[#321C04]/70">{c.body}</p>
             </div>
-            <div>
-              <h4 className="font-bold text-black text-lg m-0 mb-1">Architecture Update: Bluetooth over NFC</h4>
-              <p className="text-zinc-700 m-0 text-sm leading-relaxed">
-                To provide standard, cross-platform compatibility across all mobile devices without OS-level restrictions (like Apple's closed NFC constraints), <b>Blink utilizes Bluetooth Low-Energy (BLE) as the primary tap-to-pay mechanism</b>, backed by a QR code fallback. 
-              </p>
-            </div>
-          </div>
-
-          <h2 className="font-heading text-3xl font-bold text-black mb-8 border-b pb-4">
-            For Payers (Customers)
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="border border-zinc-200 rounded-3xl p-8 bg-white hover:shadow-lg transition-shadow duration-300">
-              <div className="w-12 h-12 bg-zinc-100 rounded-2xl flex items-center justify-center mb-6">
-                <Smartphone className="w-6 h-6 text-black" />
-              </div>
-              <h3 className="font-bold text-xl text-black mb-3">1. Enable Bluetooth</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                Ensure your smartphone's Bluetooth is turned on. When you're ready to check out, simply open the Blink App.
-              </p>
-            </div>
-
-            <div className="border border-zinc-200 rounded-3xl p-8 bg-white hover:shadow-lg transition-shadow duration-300">
-              <div className="w-12 h-12 bg-zinc-100 rounded-2xl flex items-center justify-center mb-6">
-                <Bluetooth className="w-6 h-6 text-black" />
-              </div>
-              <h3 className="font-bold text-xl text-black mb-3">2. "Tap" to Receive Request</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                Bring your phone close to the merchant's device. Blink will automatically detect the local Bluetooth payment broadcast and render the checkout screen instantly.
-              </p>
-            </div>
-
-            <div className="border border-zinc-200 rounded-3xl p-8 bg-white hover:shadow-lg transition-shadow duration-300">
-              <div className="w-12 h-12 bg-zinc-100 rounded-2xl flex items-center justify-center mb-6">
-                <ShieldCheck className="w-6 h-6 text-black" />
-              </div>
-              <h3 className="font-bold text-xl text-black mb-3">3. Approve Transaction</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                Review the exact fiat equivalent mapping to your chosen crypto asset. Use Face ID or biometrics to securely sign the transaction strictly locally on your device.
-              </p>
-            </div>
-
-            <div className="border border-zinc-200 rounded-3xl p-8 bg-white hover:shadow-lg transition-shadow duration-300">
-              <div className="w-12 h-12 bg-zinc-100 rounded-2xl flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6 text-black" />
-              </div>
-              <h3 className="font-bold text-xl text-black mb-3">4. Instant Settlement</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                The transaction is pushed permanently onchain (Stellar, Base Solana, etc). Confirmation typically executes in under 5 seconds. You're good to go!
-              </p>
-            </div>
-          </div>
-
-          <h2 className="font-heading text-3xl font-bold text-black mb-8 border-b pb-4 mt-8">
-            For Receivers (Merchants)
-          </h2>
-          <div className="space-y-8 mb-16">
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-14 h-14 bg-zinc-900 text-white rounded-full flex items-center justify-center font-bold text-xl shrink-0 border-4 border-zinc-100">
-                1
-              </div>
-              <div className="pt-2">
-                <h3 className="font-bold text-xl text-black mb-2">Input the Bill Amount</h3>
-                <p className="text-zinc-600">
-                  On the Blink App, type in the final charge amount natively in your preferred fiat currency. The system handles real-time oracle exchange rates.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-14 h-14 bg-zinc-900 text-white rounded-full flex items-center justify-center font-bold text-xl shrink-0 border-4 border-zinc-100">
-                2
-              </div>
-              <div className="pt-2">
-                <h3 className="font-bold text-xl text-black mb-2">Broadcast the Payment Request</h3>
-                <p className="text-zinc-600">
-                  Press <b>"Recieve"</b>. Blink will instantly activate a Bluetooth Low-Energy beacon bridging data to any proximate customer phone. A <b>Scan-to-Pay QR code</b> will also be actively displayed on screen for cross-compatibility fallback.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-14 h-14 bg-zinc-900 text-white rounded-full flex items-center justify-center font-bold text-xl shrink-0 border-4 border-zinc-100">
-                3
-              </div>
-              <div className="pt-2">
-                <h3 className="font-bold text-xl text-black mb-2">Wait for User Signature</h3>
-                <p className="text-zinc-600">
-                  The App listens momentarily while the customer signs on their own hardware. Do not close the screen.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-14 h-14 bg-zinc-900 text-white rounded-full flex items-center justify-center font-bold text-xl shrink-0 border-4 border-zinc-100">
-                4
-              </div>
-              <div className="pt-2">
-                <h3 className="font-bold text-xl text-black mb-2">Fiat Finality</h3>
-                <p className="text-zinc-600">
-                  Once the blockchain states finalize, Blink's smart bridges swap the incoming crypto for fiat immediately and flag your interface with a glowing green success screen. You acquire zero volatility exposure.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-16 bg-zinc-50 border border-zinc-200 rounded-3xl p-10 text-center relative">
-            <div className="flex justify-center mb-4">
-              <span className="text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full bg-zinc-200 text-zinc-600">
-                Coming Soon
-              </span>
-            </div>
-            <h3 className="font-heading text-3xl font-bold text-black mb-4">Integration SDKs</h3>
-            <p className="text-zinc-600 mb-8 max-w-lg mx-auto">
-              Looking to deploy Blink at your physical retail location or embed our POS SDK deep into your custom web architecture? SDK access and documentation will be rolling out soon.
-            </p>
-            <button disabled className="px-8 py-4 rounded-xl bg-zinc-200 text-zinc-400 font-semibold cursor-not-allowed">
-              Developer Docs Upcoming
-            </button>
-          </div>
-        </div>
+          );
+        })}
       </div>
-      <Footer />
-    </div>
+
+      {/* Merchants */}
+      <h2 className="mt-14 border-b border-[#321C04]/10 pb-4 text-2xl font-medium tracking-tight text-[#321C04] md:text-3xl">
+        For Receivers (Merchants)
+      </h2>
+      <div className="mt-8 space-y-8">
+        {merchantSteps.map((s, i) => (
+          <div key={s.title} className="flex flex-col items-start gap-5 md:flex-row">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#321C04] text-lg font-semibold text-[#FFF9F2]">
+              {i + 1}
+            </div>
+            <div className="md:pt-1.5">
+              <h3 className="mb-2 text-xl font-medium text-[#321C04]">
+                {s.title}
+              </h3>
+              <p className="leading-relaxed text-[#321C04]/70">{s.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* SDK teaser */}
+      <div className="mt-14 rounded-3xl bg-[#321C04] p-10 text-center">
+        <span className="inline-block rounded-full bg-[#FFF9F2]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#FFF9F2]/80">
+          Coming Soon
+        </span>
+        <h3 className="mt-4 text-2xl font-medium text-[#FFF9F2] md:text-3xl">
+          Integration SDKs
+        </h3>
+        <p className="mx-auto mt-4 max-w-lg text-[#FFF9F2]/70">
+          Looking to deploy Blink at your physical retail location or embed our POS
+          SDK deep into your custom web architecture? SDK access and documentation
+          will be rolling out soon.
+        </p>
+        <button
+          disabled
+          className="mt-8 cursor-not-allowed rounded-xl bg-[#FFF9F2]/15 px-8 py-4 font-medium text-[#FFF9F2]/50"
+        >
+          Developer Docs Upcoming
+        </button>
+      </div>
+    </DocShell>
   );
 }

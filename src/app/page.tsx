@@ -1,28 +1,25 @@
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
 import HeroSection from "./components/hero";
-import ServicesSection from "./components/services";
 import AboutSection from "./components/about";
-import ProcessSection from "./components/process";
-import WorkSection from "./components/work";
-import DownloadSection from "./components/contact";
-import BlockchainsSection from "./components/blockchains";
+import FeaturesSection from "./components/features-drift";
+import FrictionSection from "./components/friction";
+import ChainsSection from "./components/chains";
+import AudienceSection from "./components/audience";
+import Marquee from "./components/marquee";
+import FaqSection from "./components/faq";
+import DownloadSection from "./components/download";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
-      <div 
-        className="h-auto lg:h-screen px-4 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/sky-bg.avif')" }}
-      >
-        <Navbar />
-        <HeroSection />
-      </div>
-      <BlockchainsSection />
-      <ServicesSection />
+    <div className="min-h-screen bg-[#F6E4CF]">
+      <HeroSection />
       <AboutSection />
-      <ProcessSection />
-      <WorkSection />
+      <FeaturesSection />
+      <FrictionSection />
+      <ChainsSection />
+      <AudienceSection />
+      <Marquee />
+      <FaqSection />
       <DownloadSection />
       <Footer />
     </div>

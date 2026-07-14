@@ -1,86 +1,91 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Instagram, Send, Linkedin } from "lucide-react";
+import DriftLogo from "./drift-logo";
 
-const XIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
+const footerLinks = [
+  {
+    label: "How to use",
+    href: "https://useblinkapp.substack.com/p/blink-is-live-the-future-of-crypto?r=7bclo4",
+    external: true,
+  },
+  { label: "Docs", href: "/doc" },
+  { label: "Dunes", href: "/dunes" },
+  { label: "Privacy policy", href: "/privacy" },
+  { label: "Delete account", href: "/delete-account" },
+];
 
-gsap.registerPlugin(ScrollTrigger);
+const socials = [
+  { label: "X", href: "https://x.com/useblinkapp" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/blink-wallet/" },
+  { label: "Instagram", href: "https://www.instagram.com/useblinkapp/" },
+  { label: "Telegram", href: "https://t.me/useblinkapp" },
+];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const footerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        footerRef.current,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: "top 95%",
-          },
-        }
-      );
-    }, footerRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  const socialLinks = [
-    { icon: XIcon, href: "https://x.com/useblinkapp", label: "X" },
-    { icon: Instagram, href: "https://www.instagram.com/useblinkapp/", label: "Instagram" },
-    { icon: Send, href: "https://t.me/useblinkapp", label: "Telegram" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/blink-wallet/", label: "LinkedIn" },
-  ];
 
   return (
-    <footer
-      ref={footerRef}
-      className="w-full bg-zinc-950 py-12 md:py-20 px-6 border-t border-zinc-900"
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
-          <Link href="#hero" className="flex items-center gap-3 group">
-            <img src="/blink-logo.png" alt="Blink Logo" className="w-10 rounded-lg shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-300" />
-            <span className="font-heading text-3xl font-bold text-white tracking-tight">
-              Blink
-            </span>
-          </Link>
+    <footer className="relative z-10 bg-[#321C04] px-6 pt-24 pb-10">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-14 lg:grid-cols-3">
+        <Link href="#hero" className="flex items-center gap-4">
+          <DriftLogo size={44} fill="rgba(255,249,242,0.9)" />
+          <span className="text-4xl font-semibold tracking-tight text-[#FFF9F2]">
+            Blink
+          </span>
+        </Link>
 
-          <div className="flex gap-6">
-            {socialLinks.map(({ icon: Icon, href, label }) => (
+        <nav className="flex flex-col gap-4">
+          {footerLinks.map((link) =>
+            link.external ? (
               <a
-                key={label}
-                href={href}
+                key={link.label}
+                href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:border-blue-400 hover:text-blue-400 hover:-translate-y-1 transition-all duration-300 shadow-sm"
-                aria-label={label}
+                className="text-sm font-medium text-[#FFF9F2]/70 transition-colors hover:text-[#FFF9F2]"
               >
-                <Icon className="w-5 h-5" />
+                {link.label}
               </a>
-            ))}
-          </div>
-        </div>
+            ) : (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-sm font-medium text-[#FFF9F2]/70 transition-colors hover:text-[#FFF9F2]"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
+        </nav>
 
-        <div className="mt-16 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 text-sm font-light">
-          <p>© {currentYear} Blink Labs. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="https://useblinkapp.substack.com/p/blink-is-live-the-future-of-crypto?r=7bclo4" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">How to use</a>
-          </div>
+        <p className="text-3xl font-normal leading-[1.2] tracking-tight text-[#FFF9F2] md:text-4xl lg:text-right">
+          Money you{" "}
+          <em
+            className="not-italic"
+            style={{
+              fontFamily: "'Instrument Serif', serif",
+              fontStyle: "italic",
+            }}
+          >
+            control
+          </em>
+        </p>
+      </div>
+
+      <div className="mx-auto mt-20 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-[#FFF9F2]/15 pt-8 sm:flex-row">
+        <div className="flex gap-6">
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-medium text-[#FFF9F2]/60 transition-colors hover:text-[#FFF9F2]"
+            >
+              {s.label}
+            </a>
+          ))}
         </div>
+        <p className="text-xs text-[#FFF9F2]/50">© {currentYear} Blink Labs</p>
       </div>
     </footer>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 
 export const metadata: Metadata = {
   title: 'Dune Stats',
@@ -32,65 +33,79 @@ async function getStats(): Promise<StatsResponse | null> {
   }
 }
 
+const cardClass =
+  "rounded-3xl bg-[#FFF9F2] p-6 transition-colors hover:bg-white";
+
 export default async function DunesPage() {
   const statsData = await getStats();
 
   return (
-    <div className="w-full min-h-screen bg-[#fafafa] flex flex-col">
-      {/* Container for Navbar to keep it centered and spaced similarly to home */}
-      <div className="w-full pt-4 px-4">
-        <Navbar />
-      </div>
+    <div className="relative flex min-h-screen w-full flex-col bg-[#F6E4CF]">
+      <Navbar />
 
-      <main className="flex-grow w-full max-w-7xl mx-auto px-4 py-12 md:py-16 flex flex-col items-center">
-        {/* Header / Info Section */}
-        <div className="text-center mb-12 max-w-3xl">
-          <div className="inline-block mb-4 px-3 py-1 rounded-full bg-black/5 border border-black/10 text-sm font-medium text-black">
-            Live Statistics
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 font-heading tracking-tight">
-            Platform Analytics
+      <main className="mx-auto flex w-full max-w-6xl flex-grow flex-col items-center px-4 pb-20 pt-36 md:pt-44">
+        {/* Header */}
+        <div className="mb-14 max-w-3xl text-center">
+          <p className="eyebrow text-[#321C04]/60">Live Statistics</p>
+          <h1 className="mt-6 text-4xl font-normal leading-[1.1] tracking-tight text-[#321C04] md:text-6xl">
+            Platform <span className="serif-italic">analytics</span>
           </h1>
-          <p className="text-lg md:text-xl text-zinc-600 font-medium">
-            Transparent, real-time insights into Blink's network activity and adoption.
-            Track settlement volumes and transaction flow powered by Dune Analytics.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#321C04]/70 md:text-lg">
+            Transparent, real-time insights into Blink&apos;s network activity and
+            adoption. Track settlement volumes and transaction flow powered by Dune
+            Analytics.
           </p>
         </div>
 
-        {/* Live Stats Grid */}
+        {/* Live Stats */}
         {statsData && (
-          <div className="w-full mb-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {/* Stat Cards */}
-              <div className="bg-white p-6 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-black/5 hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all">
-                <div className="text-sm font-medium text-zinc-500 mb-2">Total Volume (NGN)</div>
-                <div className="text-3xl font-bold text-black">
-                  ₦{statsData.ngnVolume.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+          <div className="mb-12 w-full">
+            <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+              <div className={cardClass}>
+                <div className="mb-2 text-sm font-medium text-[#321C04]/55">
+                  Total Volume (NGN)
+                </div>
+                <div className="text-3xl font-semibold text-[#321C04]">
+                  ₦
+                  {statsData.ngnVolume.toLocaleString('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </div>
               </div>
-              <div className="bg-white p-6 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-black/5 hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all">
-                <div className="text-sm font-medium text-zinc-500 mb-2">Total Volume (USD)</div>
-                <div className="text-3xl font-bold text-black">
-                  ${statsData.usdEquivalent.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              <div className={cardClass}>
+                <div className="mb-2 text-sm font-medium text-[#321C04]/55">
+                  Total Volume (USD)
+                </div>
+                <div className="text-3xl font-semibold text-[#321C04]">
+                  $
+                  {statsData.usdEquivalent.toLocaleString('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </div>
               </div>
-              <div className="bg-white p-6 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-black/5 hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all">
-                <div className="text-sm font-medium text-zinc-500 mb-2">Total Users</div>
-                <div className="text-3xl font-bold text-black">
+              <div className={cardClass}>
+                <div className="mb-2 text-sm font-medium text-[#321C04]/55">
+                  Total Users
+                </div>
+                <div className="text-3xl font-semibold text-[#321C04]">
                   {statsData.totalUsers.toLocaleString()}
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-black/5 hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all">
-              <div className="text-lg font-bold text-black mb-6">Transaction Breakdown</div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4">
+            <div className="rounded-3xl bg-[#FFF9F2] p-6 md:p-8">
+              <div className="mb-6 text-lg font-semibold text-[#321C04]">
+                Transaction Breakdown
+              </div>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4">
                 {Object.entries(statsData.stats).map(([key, value]) => (
                   <div key={key} className="flex flex-col">
-                    <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1">
+                    <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-[#321C04]/45">
                       {key.replace(/_/g, ' ')}
                     </span>
-                    <span className="text-xl font-bold text-black">
+                    <span className="text-xl font-semibold text-[#321C04]">
                       {Number(value).toLocaleString()}
                     </span>
                   </div>
@@ -99,28 +114,28 @@ export default async function DunesPage() {
             </div>
           </div>
         )}
-        <div className="w-full h-[75vh] bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-black/5 transition-all hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] mb-10">
-          <iframe src="https://dune.com/embeds/7764385/11730137" className="w-full h-full border-none bg-white"
-            title="Dune Analytics Stats"
-            allowFullScreen />
-        </div>
 
-        {/* Iframe Container */}
-        <div className="w-full h-[75vh] bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-black/5 transition-all hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] mb-10">
-          <iframe
-            src="https://dune.com/embeds/7764315/11730069"
-            className="w-full h-full border-none bg-white"
-            title="Dune Analytics Stats"
-            allowFullScreen
-          />
-        </div>
-        <div className="w-full h-[75vh] bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-black/5 transition-all hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)]">
-          <iframe src="https://dune.com/embeds/7764315/11730059" className="w-full h-full border-none bg-white"
-            title="Dune Analytics Stats"
-            allowFullScreen
-          />
-        </div>
+        {/* Dune embeds */}
+        {[
+          'https://dune.com/embeds/7764385/11730137',
+          'https://dune.com/embeds/7764315/11730069',
+          'https://dune.com/embeds/7764315/11730059',
+        ].map((src) => (
+          <div
+            key={src}
+            className="mb-8 h-[75vh] w-full overflow-hidden rounded-3xl bg-[#FFF9F2]"
+          >
+            <iframe
+              src={src}
+              className="h-full w-full border-none"
+              title="Dune Analytics Stats"
+              allowFullScreen
+            />
+          </div>
+        ))}
       </main>
+
+      <Footer />
     </div>
   );
 }
