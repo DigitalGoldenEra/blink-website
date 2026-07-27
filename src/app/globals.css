@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  /* Drift palette */
-  --cream: #f6e4cf;          /* About / section background */
-  --cocoa: #321c04;          /* Dark text / icons / dark buttons */
-  --cream-light: #fff9f2;    /* Light cream — button circle / secondary bg */
-  --muted: #d9c4aa;          /* Divider / secondary button bg */
-  --muted-hover: #ceba9e;    /* Secondary button hover */
-  --cocoa-hover: #1f1003;    /* Dark button hover */
+  /* Black & White palette */
+  --cream: #ffffff;          /* Light background */
+  --cocoa: #000000;          /* Dark text / icons / dark buttons */
+  --cream-light: #f4f4f5;    /* Light gray — button circle / secondary bg */
+  --muted: #e4e4e7;          /* Divider / secondary button bg */
+  --muted-hover: #d4d4d8;    /* Secondary button hover */
+  --cocoa-hover: #18181b;    /* Dark button hover */
 
-  --line: rgba(50, 28, 4, 0.14);
+  --line: rgba(0, 0, 0, 0.12);
 
   --background: var(--cream);
   --foreground: var(--cocoa);
@@ -61,8 +61,8 @@ body {
 }
 
 ::selection {
-  background: var(--cocoa);
-  color: var(--cream-light);
+  background: #000000;
+  color: #ffffff;
 }
 
 button {
@@ -90,7 +90,7 @@ button {
   line-height: 1.2;
   font-weight: 500;
   letter-spacing: -0.01em;
-  color: var(--cocoa);
+  color: #000000;
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
@@ -98,13 +98,13 @@ button {
 .doc-prose h3 {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--cocoa);
+  color: #000000;
   margin-top: 1.75rem;
   margin-bottom: 0.75rem;
 }
 
 .doc-prose p {
-  color: rgba(50, 28, 4, 0.7);
+  color: rgba(0, 0, 0, 0.75);
   line-height: 1.75;
   margin-bottom: 1rem;
 }
@@ -113,7 +113,7 @@ button {
   list-style: disc;
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
-  color: rgba(50, 28, 4, 0.7);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 .doc-prose ul.list-none {
@@ -128,12 +128,12 @@ button {
 
 .doc-prose strong,
 .doc-prose b {
-  color: var(--cocoa);
+  color: #000000;
   font-weight: 600;
 }
 
 .doc-prose a {
-  color: var(--cocoa);
+  color: #000000;
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: opacity 0.2s ease;

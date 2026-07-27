@@ -26,13 +26,13 @@ export default function DownloadSection() {
   return (
     <section
       id="download"
-      className="relative z-10 bg-[#F6E4CF] px-6 py-24 md:py-32"
+      className="relative z-10 bg-neutral-950 px-6 py-24 md:py-32 border-t border-neutral-900"
     >
       <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-        <DriftLogo size={48} fill="#321C04" />
-        <p className="mt-8 eyebrow text-[#321C04]/60">Get Blink</p>
+        <DriftLogo size={48} fill="#ffffff" />
+        <p className="mt-8 eyebrow text-white/60">Get Blink</p>
 
-        <h2 className="mt-6 text-5xl font-normal leading-[1.05] tracking-tight text-[#321C04] sm:text-6xl md:text-7xl">
+        <h2 className="mt-6 text-5xl font-normal leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl">
           Start paying
           <br />
           in a{" "}
@@ -47,7 +47,7 @@ export default function DownloadSection() {
           </em>
         </h2>
 
-        <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-[#321C04]/70 md:text-lg">
+        <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
           Download the app and experience crypto payments that finally feel
           like cash — tap, confirm, settled.
         </p>
@@ -57,11 +57,11 @@ export default function DownloadSection() {
             href="https://testflight.apple.com/join/gNkuP7cP"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-3 rounded-full bg-[#321C04] px-8 py-4 text-[#FFF9F2] transition-colors hover:bg-[#1F1003] sm:w-auto"
+            className="flex w-full items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-black transition-colors hover:bg-neutral-200 sm:w-auto"
           >
             <AppleMark className="h-6 w-6" />
             <span className="flex flex-col text-left leading-tight">
-              <span className="text-[10px] uppercase tracking-wide text-[#FFF9F2]/60">
+              <span className="text-[10px] uppercase tracking-wide text-black/60">
                 Download for iOS
               </span>
               <span className="text-base font-medium">TestFlight</span>
@@ -72,11 +72,11 @@ export default function DownloadSection() {
             href="https://play.google.com/store/apps/details?id=com.fortichain.blink"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-3 rounded-full bg-[#D9C4AA] px-8 py-4 text-[#321C04] transition-colors hover:bg-[#CEBA9E] sm:w-auto"
+            className="flex w-full items-center justify-center gap-3 rounded-full bg-neutral-900 border border-neutral-800 px-8 py-4 text-white transition-colors hover:bg-neutral-800 sm:w-auto"
           >
             <PlayMark className="h-6 w-6" />
             <span className="flex flex-col text-left leading-tight">
-              <span className="text-[10px] uppercase tracking-wide text-[#321C04]/60">
+              <span className="text-[10px] uppercase tracking-wide text-white/60">
                 Get it on
               </span>
               <span className="text-base font-medium">Google Play</span>
@@ -84,7 +84,7 @@ export default function DownloadSection() {
           </a>
         </div>
 
-        <p className="mt-8 max-w-sm text-[11px] leading-relaxed text-[#321C04]/50">
+        <p className="mt-8 max-w-sm text-[11px] leading-relaxed text-white/50">
           * iOS users: after installing TestFlight, tap the iOS button again to
           install Blink.
         </p>

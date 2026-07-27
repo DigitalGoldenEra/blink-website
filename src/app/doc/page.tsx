@@ -79,18 +79,18 @@ export default function Doc() {
       intro="The complete guide to setting up and using the Blink mobile app for real-world crypto payments. We rely on Bluetooth Low-Energy to guarantee seamless checkouts across iOS and Android."
     >
       {/* Architecture note */}
-      <div className="flex items-start gap-4 rounded-2xl border border-[#D9C4AA] bg-[#F6E4CF] p-6">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#321C04]">
-          <Bluetooth className="h-5 w-5 text-[#FFF9F2]" strokeWidth={1.6} />
+      <div className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-black">
+          <Bluetooth className="h-5 w-5 text-white" strokeWidth={1.6} />
         </div>
         <div>
-          <h4 className="mb-1 font-semibold text-[#321C04]">
+          <h4 className="mb-1 font-semibold text-black">
             Architecture Update: Bluetooth over NFC
           </h4>
-          <p className="text-sm leading-relaxed text-[#321C04]/70">
+          <p className="text-sm leading-relaxed text-black/70">
             To provide standard, cross-platform compatibility across all mobile
             devices without OS-level restrictions (like Apple&apos;s closed NFC
-            constraints), <b className="text-[#321C04]">Blink utilizes Bluetooth
+            constraints), <b className="text-black">Blink utilizes Bluetooth
             Low-Energy (BLE) as the primary tap-to-pay mechanism</b>, backed by a
             QR code fallback.
           </p>
@@ -98,7 +98,7 @@ export default function Doc() {
       </div>
 
       {/* Payers */}
-      <h2 className="mt-12 border-b border-[#321C04]/10 pb-4 text-2xl font-medium tracking-tight text-[#321C04] md:text-3xl">
+      <h2 className="mt-12 border-b border-neutral-200 pb-4 text-2xl font-medium tracking-tight text-black md:text-3xl">
         For Payers (Customers)
       </h2>
       <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -107,56 +107,56 @@ export default function Doc() {
           return (
             <div
               key={c.title}
-              className="rounded-3xl border border-[#D9C4AA]/60 bg-[#F6E4CF] p-8 transition-colors hover:bg-[#f0dcc2]"
+              className="rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm transition-all hover:border-black"
             >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#321C04]">
-                <Icon className="h-5 w-5 text-[#FFF9F2]" strokeWidth={1.5} />
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-black">
+                <Icon className="h-5 w-5 text-white" strokeWidth={1.5} />
               </div>
-              <h3 className="mb-3 text-xl font-medium text-[#321C04]">
+              <h3 className="mb-3 text-xl font-medium text-black">
                 {c.title}
               </h3>
-              <p className="text-sm leading-relaxed text-[#321C04]/70">{c.body}</p>
+              <p className="text-sm leading-relaxed text-black/70">{c.body}</p>
             </div>
           );
         })}
       </div>
 
       {/* Merchants */}
-      <h2 className="mt-14 border-b border-[#321C04]/10 pb-4 text-2xl font-medium tracking-tight text-[#321C04] md:text-3xl">
+      <h2 className="mt-14 border-b border-neutral-200 pb-4 text-2xl font-medium tracking-tight text-black md:text-3xl">
         For Receivers (Merchants)
       </h2>
       <div className="mt-8 space-y-8">
         {merchantSteps.map((s, i) => (
           <div key={s.title} className="flex flex-col items-start gap-5 md:flex-row">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#321C04] text-lg font-semibold text-[#FFF9F2]">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-black text-lg font-semibold text-white">
               {i + 1}
             </div>
             <div className="md:pt-1.5">
-              <h3 className="mb-2 text-xl font-medium text-[#321C04]">
+              <h3 className="mb-2 text-xl font-medium text-black">
                 {s.title}
               </h3>
-              <p className="leading-relaxed text-[#321C04]/70">{s.body}</p>
+              <p className="leading-relaxed text-black/70">{s.body}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* SDK teaser */}
-      <div className="mt-14 rounded-3xl bg-[#321C04] p-10 text-center">
-        <span className="inline-block rounded-full bg-[#FFF9F2]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#FFF9F2]/80">
+      <div className="mt-14 rounded-3xl bg-black border border-neutral-800 p-10 text-center">
+        <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/80">
           Coming Soon
         </span>
-        <h3 className="mt-4 text-2xl font-medium text-[#FFF9F2] md:text-3xl">
+        <h3 className="mt-4 text-2xl font-medium text-white md:text-3xl">
           Integration SDKs
         </h3>
-        <p className="mx-auto mt-4 max-w-lg text-[#FFF9F2]/70">
+        <p className="mx-auto mt-4 max-w-lg text-white/70">
           Looking to deploy Blink at your physical retail location or embed our POS
           SDK deep into your custom web architecture? SDK access and documentation
           will be rolling out soon.
         </p>
         <button
           disabled
-          className="mt-8 cursor-not-allowed rounded-xl bg-[#FFF9F2]/15 px-8 py-4 font-medium text-[#FFF9F2]/50"
+          className="mt-8 cursor-not-allowed rounded-xl bg-white/10 px-8 py-4 font-medium text-white/50"
         >
           Developer Docs Upcoming
         </button>

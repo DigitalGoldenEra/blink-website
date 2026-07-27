@@ -7,7 +7,7 @@ type DriftLogoProps = {
 /** Abstract geometric mark used in the About section and feature cards. */
 export default function DriftLogo({
   size = 40,
-  fill = "#321C04",
+  fill = "#000000",
   className,
 }: DriftLogoProps) {
   return (

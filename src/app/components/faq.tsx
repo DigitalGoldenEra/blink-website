@@ -32,12 +32,12 @@ export default function FaqSection() {
   return (
     <section
       id="faq"
-      className="relative z-10 bg-[#F6E4CF] px-6 py-24 md:py-32"
+      className="relative z-10 bg-white border-b border-neutral-200 px-6 py-24 md:py-32"
     >
       <div className="mx-auto max-w-3xl">
         <div className="text-center">
-          <p className="eyebrow text-[#321C04]/60">Questions</p>
-          <h2 className="mt-8 text-4xl font-normal leading-[1.1] tracking-tight text-[#321C04] md:text-5xl lg:text-6xl">
+          <p className="eyebrow text-black/60">Questions</p>
+          <h2 className="mt-8 text-4xl font-normal leading-[1.1] tracking-tight text-black md:text-5xl lg:text-6xl">
             Good to{" "}
             <em
               className="not-italic"
@@ -57,18 +57,18 @@ export default function FaqSection() {
             return (
               <div
                 key={item.q}
-                className="overflow-hidden rounded-2xl bg-[#FFF9F2]"
+                className="overflow-hidden rounded-2xl bg-neutral-50 border border-neutral-200/80 shadow-sm"
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                 >
-                  <span className="text-base font-medium text-[#321C04] md:text-lg">
+                  <span className="text-base font-medium text-black md:text-lg">
                     {item.q}
                   </span>
                   <Plus
                     size={18}
-                    className={`shrink-0 text-[#321C04] transition-transform duration-300 ${
+                    className={`shrink-0 text-black transition-transform duration-300 ${
                       isOpen ? "rotate-45" : ""
                     }`}
                   />
@@ -81,7 +81,7 @@ export default function FaqSection() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-6 pb-5 text-sm leading-relaxed text-[#321C04]/70 md:text-base">
+                    <p className="px-6 pb-5 text-sm leading-relaxed text-neutral-600 md:text-base">
                       {item.a}
                     </p>
                   </div>

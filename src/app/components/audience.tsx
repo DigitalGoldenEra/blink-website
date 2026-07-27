@@ -20,11 +20,11 @@ export default function AudienceSection() {
   return (
     <section
       id="use-cases"
-      className="relative z-10 bg-[#321C04] px-6 py-24 md:py-32"
+      className="relative z-10 bg-black px-6 py-24 md:py-32"
     >
       <div className="mx-auto max-w-3xl text-center">
-        <p className="eyebrow text-[#FFF9F2]/60">Who It&apos;s For</p>
-        <h2 className="mt-8 text-4xl font-normal leading-[1.1] tracking-tight text-[#FFF9F2] md:text-5xl lg:text-6xl">
+        <p className="eyebrow text-white/60">Who It&apos;s For</p>
+        <h2 className="mt-8 text-4xl font-normal leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">
           Two sides of the{" "}
           <em
             className="not-italic"
@@ -42,13 +42,13 @@ export default function AudienceSection() {
         {audiences.map((a) => (
           <div
             key={a.title}
-            className="rounded-3xl bg-[#FFF9F2]/[0.06] p-8 backdrop-blur-sm transition-colors hover:bg-[#FFF9F2]/[0.1]"
+            className="rounded-3xl bg-white/[0.05] border border-white/10 p-8 backdrop-blur-sm transition-colors hover:bg-white/[0.08]"
           >
-            <p className="eyebrow text-[#D9C4AA] !text-[10px]">{a.category}</p>
-            <h3 className="mt-6 text-2xl font-normal tracking-tight text-[#FFF9F2] md:text-3xl">
+            <p className="eyebrow text-neutral-400 !text-[10px]">{a.category}</p>
+            <h3 className="mt-6 text-2xl font-normal tracking-tight text-white md:text-3xl">
               {a.title}
             </h3>
-            <p className="mt-5 text-sm leading-relaxed text-[#FFF9F2]/60 md:text-base">
+            <p className="mt-5 text-sm leading-relaxed text-white/60 md:text-base">
               {a.desc}
             </p>
           </div>

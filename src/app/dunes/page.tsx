@@ -34,23 +34,23 @@ async function getStats(): Promise<StatsResponse | null> {
 }
 
 const cardClass =
-  "rounded-3xl bg-[#FFF9F2] p-6 transition-colors hover:bg-white";
+  "rounded-3xl bg-white border border-neutral-200 p-6 shadow-sm transition-all hover:border-black";
 
 export default async function DunesPage() {
   const statsData = await getStats();
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col bg-[#F6E4CF]">
+    <div className="relative flex min-h-screen w-full flex-col bg-neutral-50">
       <Navbar />
 
       <main className="mx-auto flex w-full max-w-6xl flex-grow flex-col items-center px-4 pb-20 pt-36 md:pt-44">
         {/* Header */}
         <div className="mb-14 max-w-3xl text-center">
-          <p className="eyebrow text-[#321C04]/60">Live Statistics</p>
-          <h1 className="mt-6 text-4xl font-normal leading-[1.1] tracking-tight text-[#321C04] md:text-6xl">
+          <p className="eyebrow text-black/60">Live Statistics</p>
+          <h1 className="mt-6 text-4xl font-normal leading-[1.1] tracking-tight text-black md:text-6xl">
             Platform <span className="serif-italic">analytics</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#321C04]/70 md:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-600 md:text-lg">
             Transparent, real-time insights into Blink&apos;s network activity and
             adoption. Track settlement volumes and transaction flow powered by Dune
             Analytics.
@@ -62,10 +62,10 @@ export default async function DunesPage() {
           <div className="mb-12 w-full">
             <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
               <div className={cardClass}>
-                <div className="mb-2 text-sm font-medium text-[#321C04]/55">
+                <div className="mb-2 text-sm font-medium text-black/55">
                   Total Volume (NGN)
                 </div>
-                <div className="text-3xl font-semibold text-[#321C04]">
+                <div className="text-3xl font-semibold text-black">
                   ₦
                   {statsData.ngnVolume.toLocaleString('en-US', {
                     minimumFractionDigits: 2,
@@ -74,10 +74,10 @@ export default async function DunesPage() {
                 </div>
               </div>
               <div className={cardClass}>
-                <div className="mb-2 text-sm font-medium text-[#321C04]/55">
+                <div className="mb-2 text-sm font-medium text-black/55">
                   Total Volume (USD)
                 </div>
-                <div className="text-3xl font-semibold text-[#321C04]">
+                <div className="text-3xl font-semibold text-black">
                   $
                   {statsData.usdEquivalent.toLocaleString('en-US', {
                     minimumFractionDigits: 2,
@@ -86,26 +86,26 @@ export default async function DunesPage() {
                 </div>
               </div>
               <div className={cardClass}>
-                <div className="mb-2 text-sm font-medium text-[#321C04]/55">
+                <div className="mb-2 text-sm font-medium text-black/55">
                   Total Users
                 </div>
-                <div className="text-3xl font-semibold text-[#321C04]">
+                <div className="text-3xl font-semibold text-black">
                   {statsData.totalUsers.toLocaleString()}
                 </div>
               </div>
             </div>
 
-            <div className="rounded-3xl bg-[#FFF9F2] p-6 md:p-8">
-              <div className="mb-6 text-lg font-semibold text-[#321C04]">
+            <div className="rounded-3xl bg-white border border-neutral-200 shadow-sm p-6 md:p-8">
+              <div className="mb-6 text-lg font-semibold text-black">
                 Transaction Breakdown
               </div>
               <div className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4">
                 {Object.entries(statsData.stats).map(([key, value]) => (
                   <div key={key} className="flex flex-col">
-                    <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-[#321C04]/45">
+                    <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-black/45">
                       {key.replace(/_/g, ' ')}
                     </span>
-                    <span className="text-xl font-semibold text-[#321C04]">
+                    <span className="text-xl font-semibold text-black">
                       {Number(value).toLocaleString()}
                     </span>
                   </div>
@@ -123,7 +123,7 @@ export default async function DunesPage() {
         ].map((src) => (
           <div
             key={src}
-            className="mb-8 h-[75vh] w-full overflow-hidden rounded-3xl bg-[#FFF9F2]"
+            className="mb-8 h-[75vh] w-full overflow-hidden rounded-3xl bg-white border border-neutral-200 shadow-sm"
           >
             <iframe
               src={src}

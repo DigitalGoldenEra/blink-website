@@ -9,7 +9,7 @@ type DocShellProps = {
   children: ReactNode;
 };
 
-/** Shared cream/cocoa shell for the static long-form pages. */
+/** Shared black & white shell for the static long-form pages. */
 export default function DocShell({
   eyebrow,
   title,
@@ -17,19 +17,19 @@ export default function DocShell({
   children,
 }: DocShellProps) {
   return (
-    <div className="min-h-screen bg-[#F6E4CF]">
+    <div className="min-h-screen bg-neutral-50">
       {/* Header with floating pill navbar */}
       <header className="relative">
         <Navbar />
         <div className="mx-auto max-w-3xl px-6 pb-14 pt-36 text-center md:pb-20 md:pt-44">
           {eyebrow && (
-            <p className="eyebrow text-[#321C04]/60">{eyebrow}</p>
+            <p className="eyebrow text-black/60">{eyebrow}</p>
           )}
-          <h1 className="mt-6 text-4xl font-normal leading-[1.1] tracking-tight text-[#321C04] md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-4xl font-normal leading-[1.1] tracking-tight text-black md:text-5xl lg:text-6xl">
             {title}
           </h1>
           {intro && (
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#321C04]/70 md:text-lg">
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-neutral-600 md:text-lg">
               {intro}
             </p>
           )}
@@ -37,7 +37,7 @@ export default function DocShell({
       </header>
 
       <main className="px-6 pb-24">
-        <div className="mx-auto max-w-3xl rounded-3xl bg-[#FFF9F2] p-8 md:p-12 lg:p-14">
+        <div className="mx-auto max-w-3xl rounded-3xl bg-white border border-neutral-200 shadow-sm p-8 md:p-12 lg:p-14">
           {children}
         </div>
       </main>

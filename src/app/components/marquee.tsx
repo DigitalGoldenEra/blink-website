@@ -30,7 +30,7 @@ export default function Marquee() {
   const loop = [...items, ...items];
 
   return (
-    <div className="relative z-10 overflow-hidden bg-[#F6E4CF] py-8">
+    <div className="relative z-10 overflow-hidden bg-neutral-900 border-y border-neutral-800 py-8">
       <div
         ref={trackRef}
         className="flex w-max items-center gap-10 whitespace-nowrap"
@@ -38,7 +38,7 @@ export default function Marquee() {
         {loop.map((item, i) => (
           <span key={i} className="flex items-center gap-10">
             <span
-              className="text-2xl tracking-tight text-[#321C04]/70 md:text-3xl"
+              className="text-2xl tracking-tight text-white/80 md:text-3xl"
               style={{
                 fontFamily: "'Instrument Serif', serif",
                 fontStyle: "italic",
@@ -46,7 +46,7 @@ export default function Marquee() {
             >
               {item}
             </span>
-            <span className="text-[#D9C4AA]">✦</span>
+            <span className="text-neutral-500">✦</span>
           </span>
         ))}
       </div>

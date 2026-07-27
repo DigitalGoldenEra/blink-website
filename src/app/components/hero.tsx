@@ -135,7 +135,7 @@ export default function HeroSection() {
           />
 
           <div
-            className={`relative w-full max-w-sm rounded-3xl bg-[#FFF9F2] p-8 text-center shadow-2xl transition-all duration-300 ${
+            className={`relative w-full max-w-sm rounded-3xl bg-white p-8 text-center shadow-2xl border border-neutral-200 transition-all duration-300 ${
               visible
                 ? "translate-y-0 scale-100 opacity-100"
                 : "translate-y-4 scale-95 opacity-0"
@@ -146,15 +146,15 @@ export default function HeroSection() {
               type="button"
               onClick={closeApps}
               aria-label="Close"
-              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-[#321C04]/60 transition hover:bg-[#321C04]/10 hover:text-[#321C04]"
+              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-black/60 transition hover:bg-black/10 hover:text-black"
             >
               <X size={18} />
             </button>
 
-            <h3 className="text-2xl font-semibold tracking-tight text-[#321C04]">
+            <h3 className="text-2xl font-semibold tracking-tight text-black">
               Get Blink
             </h3>
-            <p className="mx-auto mt-2 max-w-xs text-sm font-medium text-[#321C04]/60">
+            <p className="mx-auto mt-2 max-w-xs text-sm font-medium text-black/60">
               Download for your device and start paying in a blink.
             </p>
 
@@ -163,7 +163,7 @@ export default function HeroSection() {
                 href={IOS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 rounded-xl bg-[#321C04] px-6 py-3.5 text-[#FFF9F2] transition hover:bg-[#1F1003]"
+                className="flex items-center justify-center gap-3 rounded-xl bg-black px-6 py-3.5 text-white transition hover:bg-neutral-800"
               >
                 <AppleMark className="h-5 w-5" />
                 <span className="text-sm font-medium">Download for iOS</span>
@@ -172,14 +172,14 @@ export default function HeroSection() {
                 href={ANDROID_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 rounded-xl bg-[#D9C4AA] px-6 py-3.5 text-[#321C04] transition hover:bg-[#CEBA9E]"
+                className="flex items-center justify-center gap-3 rounded-xl bg-neutral-100 border border-neutral-200 px-6 py-3.5 text-black transition hover:bg-neutral-200"
               >
                 <PlayMark className="h-5 w-5" />
                 <span className="text-sm font-medium">Get it on Google Play</span>
               </a>
             </div>
 
-            <p className="mx-auto mt-5 max-w-xs text-[11px] leading-relaxed text-[#321C04]/50">
+            <p className="mx-auto mt-5 max-w-xs text-[11px] leading-relaxed text-black/50">
               iOS users: after installing TestFlight, tap the iOS button again to
               install Blink.
             </p>

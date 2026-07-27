@@ -66,16 +66,16 @@ function FeatureCard({ feature, delay }: { feature: Feature; delay: number }) {
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`group flex flex-col rounded-3xl bg-[#FFF9F2] p-8 transition-all duration-700 ease-out md:p-10 ${
+      className={`group flex flex-col rounded-3xl bg-white border border-neutral-200/80 shadow-sm p-8 transition-all duration-700 ease-out hover:border-black hover:shadow-md md:p-10 ${
         shown ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
     >
       <div className="flex items-start justify-between">
-        <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#321C04] transition-transform duration-500 group-hover:-translate-y-1">
-          <Icon size={22} className="text-[#FFF9F2]" strokeWidth={1.5} />
+        <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black transition-transform duration-500 group-hover:-translate-y-1">
+          <Icon size={22} className="text-white" strokeWidth={1.5} />
         </span>
         <span
-          className="text-3xl text-[#D9C4AA]"
+          className="text-3xl text-neutral-400"
           style={{
             fontFamily: "'Instrument Serif', serif",
             fontStyle: "italic",
@@ -85,10 +85,10 @@ function FeatureCard({ feature, delay }: { feature: Feature; delay: number }) {
         </span>
       </div>
 
-      <h3 className="mt-10 text-xl font-medium tracking-tight text-[#321C04] md:text-2xl">
+      <h3 className="mt-10 text-xl font-medium tracking-tight text-black md:text-2xl">
         {feature.title}
       </h3>
-      <p className="mt-4 text-sm leading-relaxed text-[#321C04]/65 md:text-base">
+      <p className="mt-4 text-sm leading-relaxed text-black/65 md:text-base">
         {feature.description}
       </p>
     </div>
@@ -101,7 +101,7 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="relative z-10 bg-[#F6E4CF] px-6 py-24 md:py-32"
+      className="relative z-10 bg-neutral-50 px-6 py-24 md:py-32"
     >
       <div className="mx-auto max-w-6xl">
         <div
@@ -111,8 +111,8 @@ export default function FeaturesSection() {
           }`}
         >
           <div>
-            <p className="eyebrow text-[#321C04]/60">Why Blink</p>
-            <h2 className="mt-6 max-w-2xl text-4xl font-normal leading-[1.12] tracking-tight text-[#321C04] md:text-5xl lg:text-6xl">
+            <p className="eyebrow text-black/60">Why Blink</p>
+            <h2 className="mt-6 max-w-2xl text-4xl font-normal leading-[1.12] tracking-tight text-black md:text-5xl lg:text-6xl">
               Payments that flow with real life,{" "}
               <em
                 className="not-italic"
@@ -125,7 +125,7 @@ export default function FeaturesSection() {
               </em>
             </h2>
           </div>
-          <p className="max-w-xs text-sm leading-relaxed text-[#321C04]/60 md:text-base">
+          <p className="max-w-xs text-sm leading-relaxed text-black/60 md:text-base">
             No noise, no complicated systems. Just tap, confirm, settled — the
             way spending money should feel.
           </p>

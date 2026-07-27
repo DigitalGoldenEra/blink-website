@@ -24,11 +24,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 bg-[#321C04] px-6 pt-24 pb-10">
+    <footer className="relative z-10 bg-black border-t border-neutral-900 px-6 pt-24 pb-10">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-14 lg:grid-cols-3">
         <Link href="#hero" className="flex items-center gap-4">
-          <DriftLogo size={44} fill="rgba(255,249,242,0.9)" />
-          <span className="text-4xl font-semibold tracking-tight text-[#FFF9F2]">
+          <DriftLogo size={44} fill="#ffffff" />
+          <span className="text-4xl font-semibold tracking-tight text-white">
             Blink
           </span>
         </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-[#FFF9F2]/70 transition-colors hover:text-[#FFF9F2]"
+                className="text-sm font-medium text-white/70 transition-colors hover:text-white"
               >
                 {link.label}
               </a>
@@ -49,7 +49,7 @@ export default function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-[#FFF9F2]/70 transition-colors hover:text-[#FFF9F2]"
+                className="text-sm font-medium text-white/70 transition-colors hover:text-white"
               >
                 {link.label}
               </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
           )}
         </nav>
 
-        <p className="text-3xl font-normal leading-[1.2] tracking-tight text-[#FFF9F2] md:text-4xl lg:text-right">
+        <p className="text-3xl font-normal leading-[1.2] tracking-tight text-white md:text-4xl lg:text-right">
           Money you{" "}
           <em
             className="not-italic"
@@ -71,7 +71,7 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="mx-auto mt-20 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-[#FFF9F2]/15 pt-8 sm:flex-row">
+      <div className="mx-auto mt-20 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 sm:flex-row">
         <div className="flex gap-6">
           {socials.map((s) => (
             <a
@@ -79,13 +79,13 @@ export default function Footer() {
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-medium text-[#FFF9F2]/60 transition-colors hover:text-[#FFF9F2]"
+              className="text-xs font-medium text-white/60 transition-colors hover:text-white"
             >
               {s.label}
             </a>
           ))}
         </div>
-        <p className="text-xs text-[#FFF9F2]/50">© {currentYear} Blink Labs</p>
+        <p className="text-xs text-white/50">© {currentYear} Blink Labs</p>
       </div>
     </footer>
   );

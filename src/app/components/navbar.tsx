@@ -19,7 +19,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-1 text-lg font-bold tracking-tight text-black"
         >
-          <DriftLogo size={28} fill="#321C04" />
+          <DriftLogo size={28} fill="#000000" />
           Blink
         </Link>
 
@@ -37,7 +37,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex gap-2">
-          <a href="#download" className="rounded-full bg-[#321C04] px-5 py-2.5 text-sm font-medium text-white transition">
+          <a href="#download" className="rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-neutral-800">
             Download app
           </a>
         </div>

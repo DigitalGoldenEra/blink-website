@@ -32,22 +32,22 @@ export default function DeleteAccount() {
       intro="We respect your right to control your data. This page explains how to request deletion of your Blink account and associated data."
     >
       <div className="flex items-center gap-4">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#321C04]">
-          <Trash2 className="h-6 w-6 text-[#FFF9F2]" strokeWidth={1.5} />
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black">
+          <Trash2 className="h-6 w-6 text-white" strokeWidth={1.5} />
         </div>
-        <h2 className="text-2xl font-medium tracking-tight text-[#321C04] md:text-3xl">
+        <h2 className="text-2xl font-medium tracking-tight text-black md:text-3xl">
           Delete Your Blink Account
         </h2>
       </div>
 
       {/* Non-custodial warning */}
-      <div className="mt-8 flex gap-4 rounded-2xl border border-[#D9C4AA] bg-[#F6E4CF] p-6">
-        <AlertCircle className="mt-0.5 h-6 w-6 shrink-0 text-[#321C04]" strokeWidth={1.6} />
+      <div className="mt-8 flex gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+        <AlertCircle className="mt-0.5 h-6 w-6 shrink-0 text-black" strokeWidth={1.6} />
         <div>
-          <h3 className="mb-2 font-semibold text-[#321C04]">
+          <h3 className="mb-2 font-semibold text-black">
             Important: Non-Custodial Wallet
           </h3>
-          <p className="text-sm leading-relaxed text-[#321C04]/70">
+          <p className="text-sm leading-relaxed text-black/70">
             Blink is a non-custodial wallet. Your private keys and cryptocurrency
             are stored only on your device. Deleting your account will remove your
             data from our servers, but you remain responsible for your wallet and
@@ -63,29 +63,29 @@ export default function DeleteAccount() {
       <div className="mt-6 space-y-6">
         {steps.map((s, i) => (
           <div key={s.title} className="flex gap-4">
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#321C04] text-sm font-semibold text-[#FFF9F2]">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-black text-sm font-semibold text-white">
               {i + 1}
             </div>
             <div>
-              <h3 className="mb-2 text-lg font-semibold text-[#321C04]">
+              <h3 className="mb-2 text-lg font-semibold text-black">
                 {s.title}
               </h3>
               {s.body ? (
-                <p className="leading-relaxed text-[#321C04]/70">{s.body}</p>
+                <p className="leading-relaxed text-black/70">{s.body}</p>
               ) : (
                 <>
-                  <p className="mb-4 leading-relaxed text-[#321C04]/70">
+                  <p className="mb-4 leading-relaxed text-black/70">
                     Send an email to{" "}
                     <a
                       href="mailto:admin@useblinkapp.com"
-                      className="text-[#321C04] underline underline-offset-2 hover:opacity-65"
+                      className="text-black underline underline-offset-2 hover:opacity-65"
                     >
                       admin@useblinkapp.com
                     </a>{" "}
                     with the subject line &ldquo;Account Deletion Request&rdquo;
                     and include:
                   </p>
-                  <ul className="list-disc space-y-1 pl-6 text-[#321C04]/70">
+                  <ul className="list-disc space-y-1 pl-6 text-black/70">
                     <li>The email address associated with your Blink account</li>
                     <li>Confirmation that you have backed up your wallet</li>
                     <li>Any additional information to verify your identity</li>
@@ -101,12 +101,12 @@ export default function DeleteAccount() {
         <h2>What Data Gets Deleted</h2>
       </div>
 
-      <div className="mt-6 rounded-2xl border border-[#D9C4AA] bg-[#F6E4CF] p-6">
+      <div className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
         <div className="mb-4 flex gap-3">
-          <CheckCircle2 className="h-6 w-6 shrink-0 text-[#321C04]" strokeWidth={1.6} />
-          <h3 className="text-lg font-semibold text-[#321C04]">Data We Delete</h3>
+          <CheckCircle2 className="h-6 w-6 shrink-0 text-black" strokeWidth={1.6} />
+          <h3 className="text-lg font-semibold text-black">Data We Delete</h3>
         </div>
-        <ul className="list-disc space-y-2 pl-6 text-[#321C04]/75">
+        <ul className="list-disc space-y-2 pl-6 text-black/75">
           <li>Your contact information (name, email address)</li>
           <li>Support messages and communication history</li>
           <li>Device identifiers and usage analytics</li>
@@ -115,26 +115,26 @@ export default function DeleteAccount() {
         </ul>
       </div>
 
-      <div className="mt-6 rounded-2xl border border-[#D9C4AA]/70 bg-[#F6E4CF]/50 p-6">
+      <div className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50/50 p-6">
         <div className="mb-4 flex gap-3">
-          <AlertCircle className="h-6 w-6 shrink-0 text-[#321C04]/70" strokeWidth={1.6} />
-          <h3 className="text-lg font-semibold text-[#321C04]">
+          <AlertCircle className="h-6 w-6 shrink-0 text-black/70" strokeWidth={1.6} />
+          <h3 className="text-lg font-semibold text-black">
             Data We Cannot Delete
           </h3>
         </div>
-        <ul className="list-disc space-y-2 pl-6 text-[#321C04]/75">
+        <ul className="list-disc space-y-2 pl-6 text-black/75">
           <li>
-            <strong className="text-[#321C04]">Blockchain Records:</strong>{" "}
+            <strong className="text-black">Blockchain Records:</strong>{" "}
             Transactions recorded on public blockchains are permanent and cannot be
             deleted by anyone
           </li>
           <li>
-            <strong className="text-[#321C04]">Local Wallet Data:</strong> Your
+            <strong className="text-black">Local Wallet Data:</strong> Your
             private keys and wallet data stored on your device must be deleted
             manually by uninstalling the app
           </li>
           <li>
-            <strong className="text-[#321C04]">Legal Records:</strong> Information
+            <strong className="text-black">Legal Records:</strong> Information
             required to be retained for legal, regulatory, or compliance purposes
             (typically 7 years)
           </li>
@@ -186,16 +186,16 @@ export default function DeleteAccount() {
       </div>
 
       {/* CTA */}
-      <div className="mt-12 rounded-3xl bg-[#321C04] p-8 text-center md:p-10">
-        <h3 className="text-2xl font-medium text-[#FFF9F2]">
+      <div className="mt-12 rounded-3xl bg-black border border-neutral-800 p-8 text-center md:p-10">
+        <h3 className="text-2xl font-medium text-white">
           Ready to delete your account?
         </h3>
-        <p className="mx-auto mt-3 max-w-md text-[#FFF9F2]/70">
+        <p className="mx-auto mt-3 max-w-md text-white/70">
           Send your deletion request to our support team.
         </p>
         <a
           href="mailto:admin@useblinkapp.com?subject=Account%20Deletion%20Request"
-          className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#FFF9F2] px-8 py-4 font-medium text-[#321C04] transition hover:bg-white"
+          className="mt-7 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 font-medium text-black transition hover:bg-neutral-200"
         >
           Email Support
         </a>
