@@ -1,5 +1,22 @@
+import type { Metadata } from "next";
 import DocShell from "../components/doc-shell";
 import { Trash2, AlertCircle, CheckCircle2 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Delete Your Account",
+  description:
+    "Learn how to request deletion of your Blink account and associated data. We respect your right to control your personal data and will process requests within 30 days.",
+  alternates: { canonical: "/delete-account" },
+  robots: { index: true, follow: false },
+  openGraph: {
+    title: "Delete Your Blink Account",
+    description:
+      "Request deletion of your Blink account and personal data. Understand what data gets deleted and what is retained for legal compliance.",
+    url: "https://useblinkapp.com/delete-account",
+    images: [{ url: "/blink-logo.png", alt: "Blink Account Deletion" }],
+  },
+};
+
 
 const steps = [
   {

@@ -28,10 +28,10 @@ export default function FrictionSection() {
         <div className="flex flex-col gap-6 border-b border-white/15 pb-12 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="eyebrow text-white/60">The Friction</p>
-            <h2 className="mt-6 max-w-xl text-4xl font-normal leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h2 className="mt-6 max-w-2xl text-[2.5rem] font-medium leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[72px]">
               Crypto checkout still feels{" "}
               <em
-                className="not-italic"
+                className="not-italic text-white"
                 style={{
                   fontFamily: "'Instrument Serif', serif",
                   fontStyle: "italic",
@@ -51,18 +51,18 @@ export default function FrictionSection() {
           {points.map((p) => (
             <div
               key={p.title}
-              className="grid grid-cols-[1fr_auto] items-center gap-x-8 gap-y-3 border-b border-white/10 py-10"
+              className="group grid grid-cols-[1fr_auto] items-center gap-x-8 gap-y-3 border-b border-white/10 py-10 transition-colors hover:border-white/30"
             >
               <div>
-                <h3 className="text-2xl font-normal tracking-tight text-white md:text-3xl">
+                <h3 className="text-2xl font-medium tracking-tight text-white transition-transform duration-300 group-hover:translate-x-2 md:text-3xl">
                   {p.title}
                 </h3>
-                <p className="mt-2 max-w-md text-sm leading-relaxed text-white/55 md:text-base">
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-white/55 transition-transform duration-300 group-hover:translate-x-2 md:text-base">
                   {p.desc}
                 </p>
               </div>
               <span
-                className="text-2xl text-neutral-400 md:text-4xl"
+                className="text-3xl text-neutral-500 transition-colors duration-300 group-hover:text-white md:text-5xl"
                 style={{
                   fontFamily: "'Instrument Serif', serif",
                   fontStyle: "italic",
@@ -75,7 +75,7 @@ export default function FrictionSection() {
         </div>
 
         <div className="mt-16 flex items-center gap-4">
-          <DriftLogo size={32} fill="rgba(255,255,255,0.8)" />
+          <DriftLogo size={32} variant="dark" />
           <span className="eyebrow text-white/50">
             Built to remove every step
           </span>

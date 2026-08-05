@@ -13,10 +13,10 @@ export default function ChainsSection() {
     >
       <div className="mx-auto max-w-3xl text-center">
         <p className="eyebrow text-black/60">A Growing Network</p>
-        <h2 className="mt-8 text-4xl font-normal leading-[1.1] tracking-tight text-black md:text-5xl lg:text-6xl">
+        <h2 className="mt-8 text-4xl font-normal leading-[1.1] tracking-tight text-black sm:text-5xl md:text-6xl lg:text-[72px]">
           Every chain makes the network{" "}
           <em
-            className="not-italic"
+            className="not-italic text-neutral-400"
             style={{
               fontFamily: "'Instrument Serif', serif",
               fontStyle: "italic",
@@ -37,12 +37,12 @@ export default function ChainsSection() {
           {chains.map((chain) => (
             <div
               key={chain.name}
-              className="group flex flex-col items-center gap-3 rounded-3xl bg-white border border-neutral-200/80 p-6 py-12 shadow-sm transition-all duration-300 hover:bg-black hover:border-black"
+              className="group relative overflow-hidden flex flex-col items-center gap-3 rounded-3xl bg-white border border-neutral-200/80 p-6 py-12 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:bg-black hover:border-black hover:shadow-xl"
             >
-              <span className="text-lg font-semibold text-black transition-colors duration-300 group-hover:text-white">
+              <span className="text-xl font-semibold text-black transition-colors duration-300 group-hover:text-white">
                 {chain.name}
               </span>
-              <span className="eyebrow text-black/50 !text-[10px] transition-colors duration-300 group-hover:text-white/60">
+              <span className="eyebrow text-black/50 !text-[10px] tracking-widest transition-colors duration-300 group-hover:text-white/70">
                 {chain.caption}
               </span>
             </div>

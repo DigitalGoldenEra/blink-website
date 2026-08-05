@@ -19,7 +19,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-1 text-lg font-bold tracking-tight text-black"
         >
-          <DriftLogo size={28} fill="#000000" />
+          <DriftLogo size={28} variant="inline" />
           Blink
         </Link>
 

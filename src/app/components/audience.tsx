@@ -24,10 +24,10 @@ export default function AudienceSection() {
     >
       <div className="mx-auto max-w-3xl text-center">
         <p className="eyebrow text-white/60">Who It&apos;s For</p>
-        <h2 className="mt-8 text-4xl font-normal leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">
+        <h2 className="mt-8 text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[72px]">
           Two sides of the{" "}
           <em
-            className="not-italic"
+            className="not-italic text-white"
             style={{
               fontFamily: "'Instrument Serif', serif",
               fontStyle: "italic",
@@ -42,10 +42,10 @@ export default function AudienceSection() {
         {audiences.map((a) => (
           <div
             key={a.title}
-            className="rounded-3xl bg-white/[0.05] border border-white/10 p-8 backdrop-blur-sm transition-colors hover:bg-white/[0.08]"
+            className="group relative overflow-hidden rounded-3xl bg-white/[0.04] border border-white/10 p-8 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.07] hover:shadow-2xl"
           >
-            <p className="eyebrow text-neutral-400 !text-[10px]">{a.category}</p>
-            <h3 className="mt-6 text-2xl font-normal tracking-tight text-white md:text-3xl">
+            <p className="eyebrow text-neutral-400 !text-[10px] tracking-widest uppercase">{a.category}</p>
+            <h3 className="mt-6 text-2xl font-medium tracking-tight text-white md:text-3xl">
               {a.title}
             </h3>
             <p className="mt-5 text-sm leading-relaxed text-white/60 md:text-base">

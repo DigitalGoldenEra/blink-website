@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import DocShell from "../components/doc-shell";
 import {
   ShieldCheck,
@@ -14,6 +15,20 @@ import {
   ExternalLink,
   ShieldAlert,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Read Blink's privacy policy. Learn how we collect, use, and protect your personal data when you use the Blink crypto payments app. Your privacy is our priority.",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Blink Privacy Policy",
+    description:
+      "How Blink collects, uses, and protects your personal data. Full privacy policy for the Blink crypto payments app.",
+    url: "https://useblinkapp.com/privacy",
+    images: [{ url: "/blink-logo.png", alt: "Blink Privacy Policy" }],
+  },
+};
 
 export default function PrivacyPolicy() {
   return (

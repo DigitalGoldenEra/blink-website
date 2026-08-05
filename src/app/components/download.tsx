@@ -29,21 +29,21 @@ export default function DownloadSection() {
       className="relative z-10 bg-neutral-950 px-6 py-24 md:py-32 border-t border-neutral-900"
     >
       <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-        <DriftLogo size={48} fill="#ffffff" />
+        <DriftLogo size={48} variant="dark" />
         <p className="mt-8 eyebrow text-white/60">Get Blink</p>
 
-        <h2 className="mt-6 text-5xl font-normal leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl">
+        <h2 className="mt-6 text-5xl font-normal leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[80px]">
           Start paying
           <br />
           in a{" "}
           <em
-            className="not-italic"
+            className="not-italic text-white"
             style={{
               fontFamily: "'Instrument Serif', serif",
               fontStyle: "italic",
             }}
           >
-            blink
+            Blink
           </em>
         </h2>
 
@@ -57,7 +57,7 @@ export default function DownloadSection() {
             href="https://testflight.apple.com/join/gNkuP7cP"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-black transition-colors hover:bg-neutral-200 sm:w-auto"
+            className="flex w-full items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-black shadow-xl shadow-white/5 transition-all duration-300 hover:scale-105 hover:bg-neutral-100 sm:w-auto active:scale-95"
           >
             <AppleMark className="h-6 w-6" />
             <span className="flex flex-col text-left leading-tight">
@@ -72,7 +72,7 @@ export default function DownloadSection() {
             href="https://play.google.com/store/apps/details?id=com.fortichain.blink"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-3 rounded-full bg-neutral-900 border border-neutral-800 px-8 py-4 text-white transition-colors hover:bg-neutral-800 sm:w-auto"
+            className="flex w-full items-center justify-center gap-3 rounded-full bg-neutral-900 border border-neutral-800 px-8 py-4 text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-neutral-800 hover:border-neutral-700 sm:w-auto active:scale-95"
           >
             <PlayMark className="h-6 w-6" />
             <span className="flex flex-col text-left leading-tight">

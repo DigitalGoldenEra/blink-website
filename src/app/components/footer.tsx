@@ -27,7 +27,7 @@ export default function Footer() {
     <footer className="relative z-10 bg-black border-t border-neutral-900 px-6 pt-24 pb-10">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-14 lg:grid-cols-3">
         <Link href="#hero" className="flex items-center gap-4">
-          <DriftLogo size={44} fill="#ffffff" />
+          <DriftLogo size={44} variant="dark" />
           <span className="text-4xl font-semibold tracking-tight text-white">
             Blink
           </span>

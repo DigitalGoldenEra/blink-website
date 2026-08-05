@@ -48,7 +48,7 @@ export default function AboutSection() {
       {/* Bottom area */}
       <div className="mx-auto mt-20 flex max-w-6xl flex-col gap-12 md:flex-row md:gap-24">
         <div className="flex shrink-0 items-start gap-4">
-          <DriftLogo size={40} fill="#000000" />
+          <DriftLogo size={40} variant="default" />
           <span className="text-xs font-semibold uppercase leading-tight tracking-widest text-black">
             Money
             <br />

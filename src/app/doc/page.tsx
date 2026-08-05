@@ -1,5 +1,28 @@
+import type { Metadata } from "next";
 import DocShell from "../components/doc-shell";
 import { Bluetooth, Smartphone, ShieldCheck, Zap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "How to Use Blink",
+  description:
+    "Official guide to using the Blink mobile app. Learn how to pay with USDC over Bluetooth — no QR codes, no wallet addresses — and how merchants accept crypto and settle in local currency instantly.",
+  alternates: { canonical: "/doc" },
+  openGraph: {
+    title: "How to Use Blink | Official Documentation",
+    description:
+      "Step-by-step guide for customers and merchants using Blink's Bluetooth crypto payment app.",
+    url: "https://useblinkapp.com/doc",
+    images: [{ url: "/blink-logo.png", alt: "Blink Documentation" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "How to Use Blink",
+    description:
+      "Step-by-step guide for customers and merchants using Blink's BLE crypto payment app.",
+    images: ["/blink-logo.png"],
+  },
+};
+
 
 const payerCards = [
   {
@@ -150,13 +173,13 @@ export default function Doc() {
           Integration SDKs
         </h3>
         <p className="mx-auto mt-4 max-w-lg text-white/70">
-          Looking to deploy Blink at your physical retail location or embed our POS
-          SDK deep into your custom web architecture? SDK access and documentation
-          will be rolling out soon.
+          Looking to deploy Blink at your physical retail location or embed
+          our SDK deep into your custom web architecture? SDK access and
+          documentation will be rolling out soon.
         </p>
         <button
           disabled
-          className="mt-8 cursor-not-allowed rounded-xl bg-white/10 px-8 py-4 font-medium text-white/50"
+          className="mt-8 cursor-not-allowed rounded-xl bg-white px-8 py-4 font-medium text-black"
         >
           Developer Docs Upcoming
         </button>

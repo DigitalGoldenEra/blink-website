@@ -78,14 +78,14 @@ export default function HeroSection() {
       <Navbar />
 
       {/* Hero content */}
-      <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-12 md:pb-16">
-        <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
-          <h1 className="text-5xl font-normal leading-[1.1] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[96px]">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+          <h1 className="text-[3.5rem] font-medium leading-[1.05] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[110px]">
             Spend crypto
             <br />
             without{" "}
             <em
-              className="not-italic"
+              className="not-italic text-white"
               style={{
                 fontFamily: "'Instrument Serif', serif",
                 fontStyle: "italic",
@@ -95,13 +95,13 @@ export default function HeroSection() {
             </em>
           </h1>
 
-          <p className="mt-6 max-w-[420px] text-sm font-medium text-white/80 md:text-base">
+          <p className="mt-8 max-w-[500px] text-base font-medium leading-relaxed text-white/80 md:text-lg">
             Blink lets you spend crypto like cash and lets merchants settle
             instantly in local currency — over Bluetooth, no addresses.
           </p>
 
           {/* CTA bar */}
-          <div className="mt-8 flex items-center rounded-xl bg-black/25 py-1 pl-6 pr-1 backdrop-blur-md">
+          <div className="mt-12 flex items-center rounded-2xl bg-white/10 p-1.5 pl-6 shadow-2xl shadow-white/5 backdrop-blur-xl border border-white/20 transition-all hover:bg-white/15 hover:border-white/30">
             <p className="hidden text-sm font-medium text-white sm:block">
               No addresses. No off-ramps. Just tap, confirm, settled.
             </p>
@@ -111,7 +111,7 @@ export default function HeroSection() {
             <button
               type="button"
               onClick={openApps}
-              className="ml-4 rounded-xl bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-white/90"
+              className="ml-5 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black transition-transform hover:scale-105 active:scale-95"
             >
               Get the app
             </button>
@@ -155,7 +155,7 @@ export default function HeroSection() {
               Get Blink
             </h3>
             <p className="mx-auto mt-2 max-w-xs text-sm font-medium text-black/60">
-              Download for your device and start paying in a blink.
+              Download for your device and start paying in a Blink.
             </p>
 
             <div className="mt-7 flex flex-col gap-3">
