@@ -59,6 +59,11 @@ export const metadata: Metadata = {
   creator: "Blink",
   publisher: "Blink Payments",
   formatDetection: { telephone: false },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
   alternates: {
     canonical: "/",
   },
