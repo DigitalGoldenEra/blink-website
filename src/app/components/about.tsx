@@ -13,7 +13,7 @@ export default function AboutSection() {
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
-            href="mailto:admin@useblinkapp.com"
+            href="mailto:infodesk@useblinkapp.com"
             className="flex items-center gap-3 rounded-full bg-black py-2 pl-2 pr-6 text-white transition-colors hover:bg-neutral-800"
           >
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white">
