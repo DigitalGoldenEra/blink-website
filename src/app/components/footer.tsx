@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import DriftLogo from "./drift-logo";
+import CookiePreferencesTrigger from "./cookie-preferences-trigger";
 
 const footerLinks = [
   {
@@ -9,7 +12,9 @@ const footerLinks = [
   },
   { label: "Docs", href: "/doc" },
   { label: "Dunes", href: "/dunes" },
-  { label: "Privacy policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Cookie Policy", href: "/cookie-policy" },
   { label: "Delete account", href: "/delete-account" },
 ];
 
@@ -26,14 +31,19 @@ export default function Footer() {
   return (
     <footer className="relative z-10 bg-black border-t border-neutral-900 px-6 pt-24 pb-10">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-14 lg:grid-cols-3">
-        <Link href="#hero" className="flex items-center gap-4">
-          <DriftLogo size={44} variant="dark" />
-          <span className="text-4xl font-semibold tracking-tight text-white">
-            Blink
-          </span>
-        </Link>
+        <div className="space-y-4">
+          <Link href="#hero" className="flex items-center gap-4">
+            <DriftLogo size={44} variant="dark" />
+            <span className="text-4xl font-semibold tracking-tight text-white">
+              Blink
+            </span>
+          </Link>
+          <p className="text-xs text-white/50 max-w-xs leading-relaxed">
+            Non-custodial crypto payments at the counter via Bluetooth, settled in local currency.
+          </p>
+        </div>
 
-        <nav className="flex flex-col gap-4">
+        <nav className="flex flex-col gap-3.5">
           {footerLinks.map((link) =>
             link.external ? (
               <a
@@ -55,6 +65,12 @@ export default function Footer() {
               </Link>
             ),
           )}
+          <div className="pt-2">
+            <CookiePreferencesTrigger
+              label="Cookie Settings"
+              className="text-xs font-medium text-white/50 hover:text-white transition-colors underline underline-offset-4 flex items-center gap-1.5"
+            />
+          </div>
         </nav>
 
         <p className="text-3xl font-normal leading-[1.2] tracking-tight text-white md:text-4xl lg:text-right">
@@ -85,7 +101,7 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <p className="text-xs text-white/50">© {currentYear} Blink Labs</p>
+        <p className="text-xs text-white/50">&copy; {currentYear} Blink Labs Ltd</p>
       </div>
     </footer>
   );

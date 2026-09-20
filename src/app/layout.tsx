@@ -4,6 +4,7 @@ import 'lenis/dist/lenis.css';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import SmoothScroll from './components/smooth-scroll';
+import CookieBanner from './components/cookie-banner';
 
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
@@ -192,6 +193,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <Analytics />
         </SmoothScroll>
+        <CookieBanner />
       </body>
     </html>
   );
