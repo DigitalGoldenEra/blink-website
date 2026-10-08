@@ -7,7 +7,7 @@ const items = [
   "Nigeria",
   "Kenya",
   "Ghana",
-  "South Africa",
+  "Rwanda",
   "USDC",
   "USDT",
   "Bluetooth checkout",

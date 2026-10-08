@@ -4,12 +4,12 @@ import Link from "next/link";
 import DriftLogo from "./drift-logo";
 import CookiePreferencesTrigger from "./cookie-preferences-trigger";
 
-const footerLinks = [
-  {
-    label: "How to use",
-    href: "https://useblinkapp.substack.com/p/blink-is-live-the-future-of-crypto?r=7bclo4",
-    external: true,
-  },
+const footerLinks: { label: string; href: string; external?: boolean }[] = [
+  // {
+  //   label: "How to use",
+  //   href: "https://useblinkapp.substack.com/p/blink-is-live-the-future-of-crypto?r=7bclo4",
+  //   external: true,
+  // },
   { label: "Docs", href: "/doc" },
   { label: "Dunes", href: "/dunes" },
   { label: "Terms of Service", href: "/terms" },
@@ -23,6 +23,7 @@ const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/blink-wallet/" },
   { label: "Instagram", href: "https://www.instagram.com/useblinkapp/" },
   { label: "Telegram", href: "https://t.me/useblinkapp" },
+  { label: "TikTok", href: "https://www.tiktok.com/@useblinkapp" },
 ];
 
 export default function Footer() {

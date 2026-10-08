@@ -12,7 +12,7 @@ const audiences = [
   {
     category: "Where we start",
     title: "Emerging markets first",
-    desc: "Nigeria, Kenya, Ghana and South Africa first — places where digital money is thriving but crypto checkout is still harder than it should be.",
+    desc: "Nigeria, Kenya, Ghana and Rwanda first — places where digital money is thriving but crypto checkout is still harder than it should be.",
   },
 ];
 

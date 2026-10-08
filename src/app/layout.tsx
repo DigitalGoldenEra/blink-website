@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     // Chains
     'Stellar', 'Solana', 'Base', 'USDC', 'stablecoins', 'Web3',
     // Geographies
-    'Nigeria', 'Kenya', 'Ghana', 'South Africa', 'Africa crypto',
+    'Nigeria', 'Kenya', 'Ghana', 'Rwanda', 'Africa crypto',
     'emerging markets', 'emerging market payments',
     // Business
     'merchant settlement', 'local currency settlement', 'NGN', 'KES', 'GHS',

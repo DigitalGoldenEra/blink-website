@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "Where is Blink available?",
-    a: "We're starting in Nigeria, Kenya, Ghana and South Africa, where digital money is thriving but crypto checkout is still harder than it should be.",
+    a: "We're starting in Nigeria, Kenya, Ghana and Rwanda, where digital money is thriving but crypto checkout is still harder than it should be.",
   },
 ];
 
