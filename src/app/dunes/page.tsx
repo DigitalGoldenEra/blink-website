@@ -63,7 +63,7 @@ export default async function DunesPage() {
             <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
               <div className={cardClass}>
                 <div className="mb-2 text-sm font-medium text-black/55">
-                  Total Volume (NGN)
+                  Total Transaction Volume
                 </div>
                 <div className="text-3xl font-semibold text-black">
                   ₦
