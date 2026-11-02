@@ -7,6 +7,7 @@ const links = [
   { href: "#features", label: "Features" },
   { href: "#how-it-works", label: "How it works" },
   { href: "#chains", label: "Chains" },
+  { href: "#merchant", label: "Merchant" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -14,12 +15,12 @@ export default function Navbar() {
   return (
     <div className="absolute top-6 left-1/2 z-50 -translate-x-1/2">
       {/* Floating pill */}
-      <div className="flex items-center gap-3 md:gap-8 rounded-full bg-white px-3 py-1.5 md:px-5 md:py-2.5 shadow-lg">
+      <div className="flex w-[calc(100vw-7rem)] md:w-auto items-center justify-between md:justify-start gap-2 md:gap-8 rounded-full bg-white px-4 py-2 md:px-5 md:py-2.5 shadow-lg">
         <Link
           href="/"
-          className="flex items-center gap-1 text-base md:text-lg font-bold tracking-tight text-black"
+          className="flex shrink-0 items-center gap-1 text-sm md:text-lg font-bold tracking-tight text-black"
         >
-          <DriftLogo size={24} variant="inline" />
+          <DriftLogo size={22} variant="inline" />
           Blink
         </Link>
 
@@ -37,7 +38,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex gap-2">
-          <a href="#download" className="whitespace-nowrap rounded-full bg-black px-4 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium text-white transition hover:bg-neutral-800">
+          <a href="#download" className="whitespace-nowrap rounded-full bg-black px-3 py-1.5 md:px-5 md:py-2.5 text-[11px] md:text-sm font-medium text-white transition hover:bg-neutral-800">
             Download app
           </a>
         </div>

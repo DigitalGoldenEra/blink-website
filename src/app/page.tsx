@@ -4,6 +4,7 @@ import FeaturesSection from "./components/features-drift";
 import FrictionSection from "./components/friction";
 import ChainsSection from "./components/chains";
 import AudienceSection from "./components/audience";
+import MerchantSection from "./components/merchant";
 import Marquee from "./components/marquee";
 import FaqSection from "./components/faq";
 import DownloadSection from "./components/download";
@@ -18,6 +19,7 @@ export default function Home() {
       <FrictionSection />
       <ChainsSection />
       <AudienceSection />
+      <MerchantSection />
       <Marquee />
       <FaqSection />
       <DownloadSection />
