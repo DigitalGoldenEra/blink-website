@@ -166,23 +166,25 @@ export default function Doc() {
 
       {/* SDK teaser */}
       <div className="mt-14 rounded-3xl bg-black border border-neutral-800 p-10 text-center">
-        <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/80">
-          Coming Soon
+        <span className="inline-block rounded-full bg-emerald-500/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-400">
+          ● Now Live
         </span>
         <h3 className="mt-4 text-2xl font-medium text-white md:text-3xl">
           Integration SDKs
         </h3>
         <p className="mx-auto mt-4 max-w-lg text-white/70">
-          Looking to deploy Blink at your physical retail location or embed
-          our SDK deep into your custom web architecture? SDK access and
-          documentation will be rolling out soon.
+          The Blink SDK is live and ready for integration. Deploy Blink at
+          your physical retail location or embed our SDK into your custom web
+          architecture — get started today from your merchant dashboard.
         </p>
-        <button
-          disabled
-          className="mt-8 cursor-not-allowed rounded-xl bg-white px-8 py-4 font-medium text-black"
+        <a
+          href="https://merchant.useblinkapp.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-block rounded-xl bg-white px-8 py-4 font-medium text-black transition-opacity hover:opacity-90"
         >
-          Developer Docs Upcoming
-        </button>
+          Get Started → Merchant Dashboard
+        </a>
       </div>
     </DocShell>
   );
